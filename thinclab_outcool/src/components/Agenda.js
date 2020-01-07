@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
-import { ReactAgenda, ReactAgendaCtrl, guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
+import ReactAgendaCtrl from './reactAgendaCtrl'
+import { ReactAgenda, guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
 
 import './Agenda.css'
 
@@ -159,7 +160,7 @@ export default class Agenda extends React.Component {
 				</div>
 
 				<ReactAgenda
-					className = "ReactAgenda"
+					className="ReactAgenda"
 					minDate={new Date(now.getFullYear(), now.getMonth() - 3)}
 					maxDate={new Date(now.getFullYear(), now.getMonth() + 3)}
 					startDate={this.state.startDate}
@@ -188,7 +189,6 @@ export default class Agenda extends React.Component {
 					this.state.showModal ? <Modal clickOutside={this._closeModal} >
 						<div className="modal-content">
 							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} />
-
 						</div>
 					</Modal> : ''
 				}
