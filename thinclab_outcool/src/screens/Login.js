@@ -7,10 +7,11 @@ import './Login.css'
 const Login = () => {
     return (
         <div className="Login">
+            <h4>Outcool - Connextion</h4>
             <form className="Login-Form">
-                <input type="email" name="mail" placeholder="Email" />
-                <input type="password" name="password" placeholder="Password" />
-                <input type="submit" value="Submit" />
+                <input className="Login-Input" type="email" name="mail" placeholder="Email" />
+                <input className="Login-Input" type="password" name="password" placeholder="Password" />
+                <input className="Login-Submit" type="submit" value="Submit" />
             </form>
         </div>
     )
