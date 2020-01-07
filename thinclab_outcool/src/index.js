@@ -1,6 +1,7 @@
 // Librairies
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter }from 'react-router-dom'
 
 // Screens & components
 import App from './App'
@@ -11,6 +12,6 @@ import './index.css'
 // Others
 import * as serviceWorker from './serviceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.querySelector('#root'))
 
 serviceWorker.register()

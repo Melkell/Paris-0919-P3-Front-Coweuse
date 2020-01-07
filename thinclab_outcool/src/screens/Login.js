@@ -6,8 +6,12 @@ import './Login.css'
 
 const Login = () => {
     return (
-        <div>
-            Login page
+        <div className="Login">
+            <form className="Login-Form">
+                <input type="email" name="mail" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     )
 }
