@@ -1,10 +1,19 @@
 .Header {
     height: 50px;
+    background: rgb(255, 128, 128);
 }
 
 .Header-List {
+    height: 100%;
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+}
+
+.Header-Link {
+    display: block;
+    margin: auto;
 }

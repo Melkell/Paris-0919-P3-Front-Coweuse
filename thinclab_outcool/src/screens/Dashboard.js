@@ -1,6 +1,9 @@
 // Librairies
 import React from 'react'
 
+// Style
+import './Dashboard.css'
+
 const Dashboard = () => {
     return (
         <div className="Dashboard">
