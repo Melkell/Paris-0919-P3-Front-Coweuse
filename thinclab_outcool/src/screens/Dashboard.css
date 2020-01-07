@@ -9,7 +9,6 @@
 .Dashboard-Meteo {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
-    border: 1px solid black;
 }
 
 .Dashboard-Schedule {
