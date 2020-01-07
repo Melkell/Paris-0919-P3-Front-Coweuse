@@ -15,7 +15,6 @@
 .Dashboard-Schedule {
   grid-column: 1 / 3;
   grid-row: 3 / 7;
-  border: 1px solid black;
 }
 
 .Dashboard-List {

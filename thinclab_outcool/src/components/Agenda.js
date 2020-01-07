@@ -15,7 +15,7 @@ var colors = {
 var now = new Date();
 
 var items = [
-	{
+	/*{
 		_id: guid(),
 		name: 'Meeting , dev staff!',
 		startDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0),
@@ -28,8 +28,7 @@ var items = [
 		startDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 11, 0),
 		endDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 13, 0),
 		classes: 'color-2 color-3'
-	},
-
+	},*/
 ];
 
 export default class Agenda extends React.Component {
@@ -60,64 +59,52 @@ export default class Agenda extends React.Component {
 	}
 
 	componentDidMount() {
-
 		this.setState({ items: items })
-
-
 	}
-
 
 	componentWillReceiveProps(next, last) {
 		if (next.items) {
-
 			this.setState({ items: next.items })
 		}
 	}
-	handleItemEdit(item, openModal) {
 
+	handleItemEdit(item, openModal) {
 		if (item && openModal === true) {
 			this.setState({ selected: [item] })
 			return this._openModal();
 		}
-
-
-
 	}
-	handleCellSelection(item, openModal) {
 
+	handleCellSelection(item, openModal) {
 		if (this.state.selected && this.state.selected[0] === item) {
 			return this._openModal();
 		}
 		this.setState({ selected: [item] })
-
 	}
 
 	zoomIn() {
 		var num = this.state.cellHeight + 15
 		this.setState({ cellHeight: num })
 	}
+
 	zoomOut() {
 		var num = this.state.cellHeight - 15
 		this.setState({ cellHeight: num })
 	}
 
-
 	handleDateRangeChange(startDate, endDate) {
 		this.setState({ startDate: startDate })
-
 	}
 
 	handleRangeSelection(selected) {
-
-
 		this.setState({ selected: selected, showCtrl: true })
 		this._openModal();
-
 	}
 
 	_openModal() {
 		this.setState({ showModal: true })
 	}
+
 	_closeModal(e) {
 		if (e) {
 			e.stopPropagation();
@@ -127,28 +114,23 @@ export default class Agenda extends React.Component {
 	}
 
 	handleItemChange(items, item) {
-
 		this.setState({ items: items })
 	}
 
 	handleItemSize(items, item) {
-
 		this.setState({ items: items })
-
 	}
 
 	removeEvent(items, item) {
-
 		this.setState({ items: items });
 	}
 
 	addNewEvent(items, newItems) {
-
 		this.setState({ showModal: false, selected: [], items: items });
 		this._closeModal();
 	}
-	editEvent(items, item) {
 
+	editEvent(items, item) {
 		this.setState({ showModal: false, selected: [], items: items });
 		this._closeModal();
 	}
@@ -157,17 +139,13 @@ export default class Agenda extends React.Component {
 		this.setState({ numberOfDays: days })
 	}
 
-
 	render() {
-
 		var AgendaItem = function (props) {
 			console.log(' item component props', props)
 			return <div style={{ display: 'block', position: 'absolute', background: '#FFF' }}>{props.item.name} <button onClick={() => props.edit(props.item)}>Edit </button></div>
 		}
 		return (
-
 			<div className="content-expanded ">
-
 				<div className="control-buttons">
 					{/*
 						<button className="button-control" onClick={this.zoomIn}> <i className="zoom-plus-icon"></i> </button>
@@ -181,6 +159,7 @@ export default class Agenda extends React.Component {
 				</div>
 
 				<ReactAgenda
+					className = "ReactAgenda"
 					minDate={new Date(now.getFullYear(), now.getMonth() - 3)}
 					maxDate={new Date(now.getFullYear(), now.getMonth() + 3)}
 					startDate={this.state.startDate}
@@ -213,10 +192,7 @@ export default class Agenda extends React.Component {
 						</div>
 					</Modal> : ''
 				}
-
-
 			</div>
-
 		);
 	}
 }
