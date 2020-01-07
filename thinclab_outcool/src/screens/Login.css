@@ -1,8 +1,13 @@
+/* General */
 .Login {
     display: block;
     width: 50%;
     margin: auto;
     background: rgb(255, 255, 255);
+}
+
+.Login-Title {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Form */
