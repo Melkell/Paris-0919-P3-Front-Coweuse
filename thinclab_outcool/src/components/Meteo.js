@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 
+// Styles
+import './Meteo.css'
+
 const Meteo = () => {
 
     const [currentDate, setCurrentDate] = useState('')
@@ -73,6 +76,26 @@ const Meteo = () => {
             document.querySelector('.Meteo-Card').style.background = `rgb(${x}, ${y}, ${z})`
         }
     }
+    // Change meteo description
+    const meteoDescription = () => {
+        if (currentMeteo) {
+            if (currentMeteo.nebulosite.totale < 33) {
+                return 'partiellement couvert'
+            }
+            else if (currentMeteo.nebulosite.totale > 33 && currentMeteo.nebulosite.totale < 50) {
+                return 'plutôt nuageux'
+            }
+            else if (currentMeteo.nebulosite.totale > 50) {
+                return 'très nuageux'
+            }
+        }
+        navigator.getCurrentPosition((position) => {
+            let lat = position.coords.latitude
+            let lng = position.coords.longitude
+            Axios.get(`https://www.prevision-meteo.ch/services/json/lat=${lat}lng=${lng}`)
+                .then((result)=> console.log(result))
+        })
+    }
 
     return (
         <div className="Meteo">
@@ -80,7 +103,10 @@ const Meteo = () => {
             {isReady ? getCurrentMeteo(meteo) : ''}
             <div className="Meteo-Card" onLoad={changeColor()}>
                 {currentMeteo !== undefined ? (
-                    <p>Aujourd'hui, il fait environ {Math.round((currentMeteo.temperature.sol - 273.5) * 100) / 100} °C</p>
+                    <div className="Meteo-Info">
+                    <p className="Meteo-Temperature">{Math.round((currentMeteo.temperature.sol - 273.5) * 100) / 100} °C</p>
+                        <p>Ciel {meteoDescription()}</p>
+                    </div>
                 ) : ''}
             </div>
         </div>
