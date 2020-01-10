@@ -44,7 +44,8 @@ export default class Agenda extends React.Component {
 			locale: "fr",
 			rowsPerHour: 1,
 			numberOfDays: 7,
-			startDate: new Date()
+			startDate: new Date(),
+			tool: 'vide'
 		}
 		this.handleRangeSelection = this.handleRangeSelection.bind(this)
 		this.handleItemEdit = this.handleItemEdit.bind(this)
@@ -57,7 +58,8 @@ export default class Agenda extends React.Component {
 		this.editEvent = this.editEvent.bind(this)
 		this.changeView = this.changeView.bind(this)
 		this.handleCellSelection = this.handleCellSelection.bind(this)
-
+		this.handleTool = this.handleTool.bind(this)
+		this.handleTotal = this.handleTotal.bind(this)
 	}
 
 	componentDidMount() {
@@ -141,6 +143,15 @@ export default class Agenda extends React.Component {
 		this.setState({ numberOfDays: days })
 	}
 
+	handleTool(tool) {
+		this.setState({ tool: tool })
+		//console.log(this.state.tool)
+	}
+
+	handleTotal() {
+		console.log('from Agenda : ', this.state)
+	}
+
 	render() {
 		var AgendaItem = function (props) {
 			console.log(' item component props', props)
@@ -175,6 +186,7 @@ export default class Agenda extends React.Component {
 					rowsPerHour={this.state.rowsPerHour}
 					itemColors={colors}
 					helper={true}
+					tool={this.state.tool}
 					//itemComponent={AgendaItem}
 					view="calendar"
 					autoScale={false}
@@ -189,7 +201,7 @@ export default class Agenda extends React.Component {
 				{
 					this.state.showModal ? <Modal clickOutside={this._closeModal} >
 						<div className="modal-content">
-							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} />
+							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} tool={this.handleTool} total={this.handleTotal} />
 						</div>
 					</Modal> : ''
 				}

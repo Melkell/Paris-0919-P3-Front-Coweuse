@@ -634,7 +634,7 @@ export default class ReactAgenda extends Component {
 	}
 
 	render() {
-
+		console.log(this.props.tool)
 		var renderHeaderColumns = function (col, i) {
 			var headerLabel = moment(col);
 			headerLabel.locale(this.props.locale);

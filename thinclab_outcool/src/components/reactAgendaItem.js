@@ -43,9 +43,7 @@ export default class ReactAgendaItem extends Component {
 					zIndex: 5,
 				}
 			})
-
 		}
-
 	}
 
 	componentWillReceiveProps(props, next) {
@@ -88,7 +86,6 @@ export default class ReactAgendaItem extends Component {
 		var duratH = moment.duration(this.props.item.duration._milliseconds, 'Milliseconds').humanize();
 		var duratL = moment(this.props.item.startDateTime).format("HH:mm")
 		var duratE = moment(this.props.item.endDateTime).format("HH:mm")
-		console.log(this.props.item)
 
 		return <div style={this.state.wrapper} className="agenda-cell-item" onMouseEnter={this.raiseZindex} onMouseLeave={this.lowerZindex}>
 

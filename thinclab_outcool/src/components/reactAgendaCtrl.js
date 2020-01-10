@@ -26,7 +26,7 @@ export default class ReactAgendaCtrl extends Component {
       tool1: '',
       tool2: '',
       startDateTime: now,
-      endDateTime: now
+      endDateTime: now,
     }
     this.handleDateChange = this.handleDateChange.bind(this)
     this.addEvent = this.addEvent.bind(this)
@@ -85,11 +85,14 @@ export default class ReactAgendaCtrl extends Component {
       event.preventDefault();
     }
 
+    if (event.target.name =='tool1'){
+      this.props.tool(event.target.value)
+    }
+
     var data = this.state;
     data[event.target.name] = event.target.value;
 
     this.setState(data);
-    console.log(this.state);
   }
 
   handleDateChange(ev, date) {
@@ -195,6 +198,7 @@ export default class ReactAgendaCtrl extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.addEvent(e);
+    this.props.total();
   }
 
   handleEdit(e) {
