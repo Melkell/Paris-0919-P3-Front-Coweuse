@@ -82,7 +82,6 @@ export default class ReactAgendaItem extends Component {
 	}
 
 	render() {
-
 		var duratH = moment.duration(this.props.item.duration._milliseconds, 'Milliseconds').humanize();
 		var duratL = moment(this.props.item.startDateTime).format("HH:mm")
 		var duratE = moment(this.props.item.endDateTime).format("HH:mm")
@@ -124,7 +123,6 @@ ReactAgendaItem.propTypes = {
 	padder: PropTypes.number,
 	edit: PropTypes.func,
 	remove: PropTypes.func
-
 };
 
 ReactAgendaItem.defaultProps = {
