@@ -1,7 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import ReactAgendaCtrl from './reactAgendaCtrl'
-import { ReactAgenda, guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
+import ReactAgenda from './reactAgenda'
+import { guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
 
 import './Agenda.css'
 
