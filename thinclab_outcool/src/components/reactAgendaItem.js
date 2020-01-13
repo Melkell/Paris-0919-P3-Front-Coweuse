@@ -13,18 +13,13 @@ export default class ReactAgendaItem extends Component {
 				marginLeft: '0px',
 				zIndex: 5,
 				borderLeft: null
-
 			},
 			controls: {
-
 			}
-
-
 		};
 		this.updateDimensions = this.updateDimensions.bind(this)
 		this.raiseZindex = this.raiseZindex.bind(this)
 		this.lowerZindex = this.lowerZindex.bind(this)
-
 	}
 
 	updateDimensions() {
@@ -85,6 +80,8 @@ export default class ReactAgendaItem extends Component {
 		var duratH = moment.duration(this.props.item.duration._milliseconds, 'Milliseconds').humanize();
 		var duratL = moment(this.props.item.startDateTime).format("HH:mm")
 		var duratE = moment(this.props.item.endDateTime).format("HH:mm")
+		var tool1 = this.props.item.tool1
+		var tool2 = this.props.item.tool2
 
 		return <div style={this.state.wrapper} className="agenda-cell-item" onMouseEnter={this.raiseZindex} onMouseLeave={this.lowerZindex}>
 
@@ -105,10 +102,10 @@ export default class ReactAgendaItem extends Component {
 
 			<div className="agenda-item-description">
 				<section>{this.props.item.name}</section>
-				<p>outil 1</p>
-				<p>outil 2</p>
+				<p>{tool1}</p>
+				<p>{tool2}</p>
 				<small>
-					, {duratL} - {duratE} , {duratH}
+					{duratL} - {duratE}
 				</small>
 			</div>
 

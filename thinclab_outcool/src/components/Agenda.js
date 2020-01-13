@@ -17,12 +17,13 @@ var colors = {
 var now = new Date();
 
 var items = [
-	/*{
+	{
 		_id: guid(),
 		name: 'Meeting , dev staff!',
 		startDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0),
 		endDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0),
-		classes: 'color-1'
+		classes: 'color-1',
+		test: 'test'
 	},
 	{
 		_id: guid(),
@@ -30,7 +31,7 @@ var items = [
 		startDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 11, 0),
 		endDateTime: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 13, 0),
 		classes: 'color-2 color-3'
-	},*/
+	}
 ];
 
 export default class Agenda extends React.Component {
@@ -45,7 +46,6 @@ export default class Agenda extends React.Component {
 			rowsPerHour: 1,
 			numberOfDays: 7,
 			startDate: new Date(),
-			tool: 'vide'
 		}
 		this.handleRangeSelection = this.handleRangeSelection.bind(this)
 		this.handleItemEdit = this.handleItemEdit.bind(this)
@@ -59,7 +59,6 @@ export default class Agenda extends React.Component {
 		this.changeView = this.changeView.bind(this)
 		this.handleCellSelection = this.handleCellSelection.bind(this)
 		this.handleTool = this.handleTool.bind(this)
-		this.handleTotal = this.handleTotal.bind(this)
 	}
 
 	componentDidMount() {
@@ -148,10 +147,6 @@ export default class Agenda extends React.Component {
 		//console.log(this.state.tool)
 	}
 
-	handleTotal() {
-		console.log('from Agenda : ', this.state)
-	}
-
 	render() {
 		var AgendaItem = function (props) {
 			console.log(' item component props', props)
@@ -180,7 +175,7 @@ export default class Agenda extends React.Component {
 					endAtTime={23}
 					cellHeight={this.state.cellHeight}
 					locale="fr"
-					items={this.state.items}
+					items={this.state.items}	
 					numberOfDays={this.state.numberOfDays}
 					headFormat={"ddd DD MMM"}
 					rowsPerHour={this.state.rowsPerHour}
@@ -201,7 +196,7 @@ export default class Agenda extends React.Component {
 				{
 					this.state.showModal ? <Modal clickOutside={this._closeModal} >
 						<div className="modal-content">
-							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} tool={this.handleTool} total={this.handleTotal} />
+							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent}	/>
 						</div>
 					</Modal> : ''
 				}

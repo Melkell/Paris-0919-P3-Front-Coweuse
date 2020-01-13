@@ -916,7 +916,6 @@ ReactAgenda.propTypes = {
 	itemColors: PropTypes.object,
 	fixedHeader: PropTypes.bool,
 	autoScaleNumber: PropTypes.bool,
-	tool: PropTypes.string
 };
 
 ReactAgenda.defaultProps = {
@@ -941,6 +940,5 @@ ReactAgenda.defaultProps = {
 		"color-3": "rgba(235, 85, 59, 1)",
 		"color-4": "rgba(70, 159, 213, 1)"
 	},
-	tool: 'outil test',
 	fixedHeader: true
 }

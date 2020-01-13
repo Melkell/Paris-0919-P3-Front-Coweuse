@@ -8,11 +8,12 @@ import './reactAgendaCtrl.css';
 
 var now = new Date();
 
-const optionsTools = [
-  { value: 'outil 1', label: 'outil 1' },
-  { value: 'outil 2', label: 'outil 2' },
-  { value: 'outil 3', label: 'outil 3' },
-];
+/*const optionsTools = [
+  { value: '', label: 'choixoutil' },
+  { value: 'outil A', label: 'outil 1' },
+  { value: 'outil B', label: 'outil 2' },
+  { value: 'outil C', label: 'outil 3' }
+];*/
 
 export default class ReactAgendaCtrl extends Component {
   constructor() {
@@ -42,13 +43,12 @@ export default class ReactAgendaCtrl extends Component {
       this.setState({
         classes: Object.keys(this.props.itemColors)[0]
       })
-
     }
+
     setTimeout(function () {
       if (this.refs.eventName) {
         this.refs.eventName.focus()
       }
-
     }.bind(this), 50);
 
     if (!this.props.selectedCells) {
@@ -58,12 +58,9 @@ export default class ReactAgendaCtrl extends Component {
     }
 
     if (this.props.selectedCells && this.props.selectedCells[0] && this.props.selectedCells[0]._id) {
-
       let start = moment(this.props.selectedCells[0].startDateTime);
       let endT = moment(this.props.selectedCells[0].endDateTime);
-
       return this.setState({ editMode: true, name: this.props.selectedCells[0].name, classes: this.props.selectedCells[0].classes, startDateTime: start, endDateTime: endT });
-
     }
 
     if (this.props.selectedCells && this.props.selectedCells.length === 1) {
@@ -77,7 +74,6 @@ export default class ReactAgendaCtrl extends Component {
       let endT = moment(getLast(this.props.selectedCells)) || now;
       this.setState({ editMode: false, name: '', startDateTime: start, endDateTime: endT });
     }
-
   }
 
   handleChange(event) {
@@ -85,13 +81,12 @@ export default class ReactAgendaCtrl extends Component {
       event.preventDefault();
     }
 
-    if (event.target.name =='tool1'){
-      this.props.tool(event.target.value)
+    if (event.target.name == 'tool1') {
+      //this.props.tool(event.target.value)
     }
 
     var data = this.state;
     data[event.target.name] = event.target.value;
-
     this.setState(data);
   }
 
@@ -103,12 +98,12 @@ export default class ReactAgendaCtrl extends Component {
     if (ev === 'startDateTime' && endD.diff(date) < 0) {
       data['endDateTime'] = moment(date).add(15, 'minutes');
     }
-
     this.setState(data);
   }
 
 
   dispatchEvent(obj) {
+    console.log(this.props.items)
     var newAdded = []
     var items = this.props.items;
     if (obj['multiple']) {
@@ -124,14 +119,15 @@ export default class ReactAgendaCtrl extends Component {
           name: obj.name,
           startDateTime: new Date(start),
           endDateTime: new Date(endT),
-          classes: obj.classes
+          classes: obj.classes,
+          tool1: this.state.tool1,
+          tool2: this.state.tool2
         }
         items.push(lasobj)
         newAdded.push(lasobj)
       }.bind(this));
       return this.props.Addnew(items, newAdded)
     }
-
     obj._id = guid();
     items.push(obj)
     this.props.Addnew(items, obj)
@@ -152,34 +148,35 @@ export default class ReactAgendaCtrl extends Component {
           startDateTime: new Date(this.state.startDateTime),
           endDateTime: new Date(this.state.endDateTime),
           classes: this.state.classes,
-          multiple: obj
+          multiple: obj,
+          tool1: this.state.tool1,
+          tool2: this.state.tool2
         }
-
         return this.dispatchEvent(newObj);
-
       }
-
     }
 
     var newObj = {
       name: this.state.name,
       startDateTime: new Date(this.state.startDateTime),
       endDateTime: new Date(this.state.endDateTime),
-      classes: this.state.classes
+      classes: this.state.classes,
+      tool1: this.state.tool1,
+      tool2: this.state.tool2
     }
-
     this.dispatchEvent(newObj);
   }
 
   updateEvent(e) {
     if (this.props.selectedCells[0]._id && this.props.items) {
-
       var newObj = {
         _id: this.props.selectedCells[0]._id,
         name: this.state.name,
         startDateTime: new Date(this.state.startDateTime),
         endDateTime: new Date(this.state.endDateTime),
-        classes: this.state.classes
+        classes: this.state.classes,
+        tool1: this.state.tool1,
+        tool2: this.state.tool2
       }
       var items = this.props.items
       for (var i = 0; i < items.length; i++) {
@@ -189,16 +186,13 @@ export default class ReactAgendaCtrl extends Component {
       if (this.props.edit) {
         this.props.edit(items, newObj);
       }
-
     }
-
   }
 
 
   handleSubmit(e) {
     e.preventDefault();
     this.addEvent(e);
-    this.props.total();
   }
 
   handleEdit(e) {
@@ -265,9 +259,10 @@ export default class ReactAgendaCtrl extends Component {
             <div className="agendCtrls-label-inline">
               <label>Outil 1</label>
               <select name="tool1" onChange={this.handleChange.bind(this)} >
-                <option value="outil 1">outil A</option>
-                <option value="outil 2">outil B</option>
-                <option value="outil 3">outil C</option>
+                <option value="">--Select--</option>
+                <option value="outil A">outil A</option>
+                <option value="outil B">outil B</option>
+                <option value="outil C">outil C</option>
               </select>
             </div>
             <div className="agendCtrls-label-inline">
@@ -276,9 +271,10 @@ export default class ReactAgendaCtrl extends Component {
                 {colors}
               </div>
               <select name="tool2" onChange={this.handleChange.bind(this)} >
-                <option value="outil 1">outil A</option>
-                <option value="outil 2">outil B</option>
-                <option value="outil 3">outil C</option>
+                <option value="">--Select--</option>
+                <option value="outil 1">outil 1</option>
+                <option value="outil 2">outil 2</option>
+                <option value="outil 3">outil 3</option>
               </select>
             </div>
           </div>
@@ -307,7 +303,6 @@ ReactAgendaCtrl.propTypes = {
   selectedCells: PropTypes.array,
   edit: PropTypes.func,
   Addnew: PropTypes.func
-
 };
 
 ReactAgendaCtrl.defaultProps = {
