@@ -935,10 +935,10 @@ ReactAgenda.defaultProps = {
 	headFormat: "ddd DD MMM",
 	rowsPerHour: 4,
 	itemColors: {
-		'color-1': "rgba(102, 195, 131 , 1)",
-		"color-2": "rgba(242, 177, 52, 1)",
-		"color-3": "rgba(235, 85, 59, 1)",
-		"color-4": "rgba(70, 159, 213, 1)"
+		'color-1': "rgba(88,119,149,1)",
+		"color-2": "rgba(232,232,232,1)",
+		"color-3": "rgba(244,244,244,1)",
+		"color-4": "rgba(170,170,170,1)"
 	},
 	fixedHeader: true
 }

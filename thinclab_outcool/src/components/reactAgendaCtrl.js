@@ -219,18 +219,27 @@ export default class ReactAgendaCtrl extends Component {
 
       return (
         <div className="agendCtrls-wrapper" style={divStyle}>
-          <h1>{this.state.name}</h1>
           <form onSubmit={this.handleEdit}>
+            <h1>{this.state.name}</h1>
+            <div className="agendCtrls-radio-wrapper">{colors}</div>
             <div className="agendCtrls-label-wrapper">
               <div className="agendCtrls-label-inline">
                 <label>Outil 1</label>
-                <input type="text" name="name" autoFocus ref="eventName" className="agendCtrls-event-input" value={this.state.name} onChange={this.handleChange.bind(this)} placeholder="Event Name" />
+                <select name="tool1" onChange={this.handleChange.bind(this)} >
+                  <option value="">--Select--</option>
+                  <option value="outil A">outil A</option>
+                  <option value="outil B">outil B</option>
+                  <option value="outil C">outil C</option>
+                </select>
               </div>
               <div className="agendCtrls-label-inline ">
                 <label>Outil 2</label>
-                <div className="agendCtrls-radio-wrapper">
-                  {colors}
-                </div>
+                <select name="tool2" onChange={this.handleChange.bind(this)} >
+                  <option value="">--Select--</option>
+                  <option value="outil 1">outil 1</option>
+                  <option value="outil 2">outil 2</option>
+                  <option value="outil 3">outil 3</option>
+                </select>
               </div>
             </div>
             <div className="agendCtrls-timePicker-wrapper">
@@ -253,8 +262,11 @@ export default class ReactAgendaCtrl extends Component {
 
     return (
       <div className="agendCtrls-wrapper" style={divStyle}>
-        <h1>{this.state.name}</h1>
         <form onSubmit={this.handleSubmit}>
+          <h1>{this.state.name}</h1>
+          <div className="agendCtrls-radio-wrapper">
+            {colors}
+          </div>
           <div className="agendCtrls-label-wrapper">
             <div className="agendCtrls-label-inline">
               <label>Outil 1</label>
@@ -267,9 +279,6 @@ export default class ReactAgendaCtrl extends Component {
             </div>
             <div className="agendCtrls-label-inline">
               <label>Outil 2</label>
-              <div className="agendCtrls-radio-wrapper">
-                {colors}
-              </div>
               <select name="tool2" onChange={this.handleChange.bind(this)} >
                 <option value="">--Select--</option>
                 <option value="outil 1">outil 1</option>
@@ -288,7 +297,6 @@ export default class ReactAgendaCtrl extends Component {
               <Rdate value={this.state.endDateTime} onChange={this.handleDateChange.bind(null, 'endDateTime')} input={false} viewMode="time" ></Rdate>
             </div>
           </div>
-
           <input type="submit" value="Save" />
         </form>
       </div>
