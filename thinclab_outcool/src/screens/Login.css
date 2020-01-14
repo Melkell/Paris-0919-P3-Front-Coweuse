@@ -1,29 +1,56 @@
 /* General */
 .Login {
     display: block;
-    width: 50%;
     margin: auto;
-    background: rgb(255, 255, 255);
+    padding: auto;
 }
 
 .Login-Title {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: center;
+    margin: 5% 0 4% 0;
 }
 
 /* Form */
 .Login-Form {
+    text-align: center;
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
+    background: #587795;
+    height: 60vh;
+    margin: 0 10% 2% 10%;
+    border-radius: 20px;
+}
+
+.Login-RememberMe {
+    width: 50%;
+    margin: 3% auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.RememberMe {
+
 }
 
 .Login-Input {
-    width: 70%;
+    width: 50%;
     height: 30px;
-    margin: 5px auto;
+    max-height: 10%;
+    margin: 3% auto 0 auto;
 }
 
 .Login-Submit {
-    width: 15%;
-    height: 30px;
-    margin: 5px auto;
+    font-size: 15px;
+    width: 20%;
+    height: 10%;
+    margin: 10% auto 0 auto;
+    background-color: #e8e8e8;
+    border-radius: 20px;
 }
