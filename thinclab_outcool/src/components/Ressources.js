@@ -1,5 +1,5 @@
 // Librairies
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 // Styles
 import './Ressources.css'
@@ -33,6 +33,8 @@ const tab = [
 
 const Ressources = () => {
 
+    const [person, setPerson] = useState('')
+
     const displayList = (array) => {
         return (
             array.map(elem => (
@@ -44,27 +46,15 @@ const Ressources = () => {
                     <td className="elem5">{elem.email}</td>
                     <td className="elem6">{elem.mission}</td>
                 </tr>
+            ))
+        )
+    }
 
-                        /* <div className="elem1">
-                            <p>{elem.id}</p>
-                        </div>
-                        <div className="elem2">
-                            <p>{elem.firstname}</p>
-                        </div>
-                        <div className="elem3">
-                            <p>{elem.lastname}</p>
-                        </div>
-                        <div className="elem4">
-                            <p>{elem.role}</p>
-                        </div>
-                        <div className="elem5">
-                            <p>{elem.email}</p>
-                        </div>
-                        <div className="elem6">
-                            <p>{elem.mission}</p>
-                        </div> */
-        ))
-    )}
+    // useEffect(() => {
+    //     fetch()
+    //     .then(response => response.json())
+    //     .then(data => this.setState({ data }));
+    // }, [])
 
     return (
         <div className="ressources-global">
@@ -77,14 +67,14 @@ const Ressources = () => {
                             <select>
                                 <option>Noms</option>
                                 <option>Rôles</option>
-                                <option>missions</option>
+                                <option>Missions</option>
                             </select>
                         </div>
                         <div className="button-add">
                             <p>Ajouter un nouvel utilisateur</p>
                         </div>
                     </div>
-                    <div className="collab-list">
+                    <div className="list">
                         <table>
                             <tbody>{displayList(tab)}</tbody>
                         </table>
@@ -100,15 +90,17 @@ const Ressources = () => {
                             <select>
                                 <option>Noms</option>
                                 <option>Types</option>
-                                <option>missions</option>
+                                <option>Missions</option>
                             </select>
                         </div>
                         <div className="button-add">
-                            <p>Ajouter un nouvel utilisateur</p>
+                            <p>Ajouter un nouvel outil</p>
                         </div>
                     </div>
-                    <div className="outils-list">
-
+                    <div className="list">
+                        <table>
+                            <tbody>{displayList(tab)}</tbody>
+                        </table>
                     </div>
                 </div>
             </div>

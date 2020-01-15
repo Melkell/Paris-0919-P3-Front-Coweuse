@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .ressources-global {
     margin: 0;
     display: grid;
@@ -9,41 +13,76 @@
 
 h2 {
     text-align: center;
-    padding: 1%;
+    padding: 5%;
+    margin: 0;
+    background-color: #587795;
+    color: aliceblue;
 }
 
 .ressources-collab {
     grid-area: 1 / 1 / 2 / 2;
-    border-right: 1px solid #587795;
-    padding: 2% 0 2% 0;
+    border-right: 1px solid aliceblue;
 }
 
 .ressources-outils {
     grid-area: 1 / 2 / 2 / 3;
-    border-left: 1px solid #587795;
-    padding: 2% 0 2% 0;
+    border-left: 1px solid aliceblue;
 }
 
 .collab-filter-add {
     display: flex;
     justify-content: space-around;
-    margin: 0 0 5% 0;
+    padding: 0 0 5% 0;
+    background-color: #587795;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .outils-filter-add {
     display: flex;
     justify-content: space-around;
-    margin: 0 0 5% 0;
+    padding: 0 0 5% 0;
+    background-color: #587795;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.button-add {
+    background-color: aliceblue;
+    margin: 0;
+    padding: 2% 2% 2% 2%;
+    border-radius: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-add p {
+    margin: 0;
+
 }
 
 .collab-global {
     width: 100%;
 }
 
-.collab-list {
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.filter p {
+    margin-top: 0;
+}
+
+.list {
     box-sizing: border-box;
     width: 100%;
-    padding: 0 0 0 3%;
+    padding: 2% 0 2% 3%;
 }
 
 table {
@@ -56,6 +95,7 @@ td {
 
 .elem1 {
     width: 5%;
+    border-right: #587795;
 }
 
 .elem2 {
