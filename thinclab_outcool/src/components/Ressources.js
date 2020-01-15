@@ -72,12 +72,17 @@ const Ressources = () => {
                 <h2>LISTE DES COLLABORATEURS</h2>
                 <div className="collab-global">
                     <div className="collab-filter-add">
-                        <p>Trier par :</p>
-                        <select>
-                            <option>Noms</option>
-                            <option>Rôles</option>
-                            <option>missions</option>
-                        </select>
+                        <div className="filter">
+                            <p>Trier par :</p>
+                            <select>
+                                <option>Noms</option>
+                                <option>Rôles</option>
+                                <option>missions</option>
+                            </select>
+                        </div>
+                        <div className="button-add">
+                            <p>Ajouter un nouvel utilisateur</p>
+                        </div>
                     </div>
                     <div className="collab-list">
                         <table>
@@ -90,12 +95,17 @@ const Ressources = () => {
                 <h2>LISTE DES OUTILS</h2>
                 <div className="outils-global">
                     <div className="outils-filter-add">
-                    <p>Trier par :</p>
-                        <select>
-                            <option>Noms</option>
-                            <option>Types</option>
-                            <option>missions</option>
-                        </select>
+                        <div className="filter">
+                            <p>Trier par :</p>
+                            <select>
+                                <option>Noms</option>
+                                <option>Types</option>
+                                <option>missions</option>
+                            </select>
+                        </div>
+                        <div className="button-add">
+                            <p>Ajouter un nouvel utilisateur</p>
+                        </div>
                     </div>
                     <div className="outils-list">
 
