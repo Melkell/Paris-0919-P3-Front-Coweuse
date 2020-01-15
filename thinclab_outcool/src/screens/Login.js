@@ -31,7 +31,7 @@ const Login = () => {
 				<input className="Login-Input" type="password" placeholder="Password" value={passwordInput} onChange={passwordHandler} />
 					<div className="Login-RememberMe">
 						<input className="RememberMe" type="checkbox" name="scales" checked />		Se Souvenir de moi
-						<a href="App.js">Mot de passe oublié ?</a>
+						<a className="Link"href="App.js">Mot de passe oublié ?</a>
 					</div>
 				<input className="Login-Submit" type="submit" value="CONNEXION" />
 			</form>
