@@ -1,11 +1,11 @@
 // Librairies
 import React from 'react'
+import Agenda from '../components/Agenda'
 
 // Style
 import './Dashboard.css'
 import Meteo from '../components/Meteo'
 import Listemission from './Listemission';
-import Agenda from './Agenda';
 
 const Dashboard = () => {
     return (
