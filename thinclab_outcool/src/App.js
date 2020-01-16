@@ -5,8 +5,9 @@ import React from 'react'
 
 // Styles
 import './App.css'
-import Dashboard from './screens/Dashboard'
 import Header from './components/Header'
+import Dashboard from './screens/Dashboard';
+import Admin from './components/Admin';
 
 const App = () => {
   return (
