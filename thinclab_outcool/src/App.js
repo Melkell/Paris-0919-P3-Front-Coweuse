@@ -2,7 +2,6 @@
 import React from 'react'
 
 // Screens & components
-
 // Styles
 import './App.css'
 import Dashboard from './screens/Dashboard'

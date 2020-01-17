@@ -1,0 +1,53 @@
+.Mission {
+    padding: 3% 15%;
+    background: #555;
+    width: 220px;
+    margin: 20px auto ;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.Mission2 {
+    padding: 3% 15%;
+    background: #555;
+    width: 220px;
+    margin: 20px auto ;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Mission3 {
+    padding: 3% 15%;
+    background: #555;
+    width: 220px;
+    margin: 20px auto ;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Mission4 {
+    padding: 3% 15%;
+    background: #555;
+    width: 220px;
+    margin: 20px auto ;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.nameMission{
+    color:white;
+}
+
+.date{
+    color: white;
+}
+
+.brocoli{
+    color: white;
+}
