@@ -47,7 +47,7 @@ const Meteo = () => {
         setCurrentDate(`${year}-${month}-${day} ${hour}:00:00`)
 
         // Get the meteo
-        Axios.get("https://www.infoclimat.fr/public-api/gfs/json?_ll=48.85341,2.3488&_auth=VU9QRwR6XX9TfgYxBXMKIwRsVWABdwIlC3cHZF86VClWPVU0VjZWMFM9VitSfQo8BSgEZ1phCTkKYVYuXC4FZFU%2FUDwEb106UzwGYwUqCiEEKlU0ASECJQtgB2FfLFQ1VjBVNFYrVjVTPFYqUmoKPwUpBHtaZAk0Cm5WOVwyBW9VMlA0BGVdOVMjBnsFMAprBDZVMQE4AjsLOQcxX2dUYVY3VTlWNlY2UyJWMVJiCjcFMwRtWmwJNgpsVi5cLgUfVUVQKQQnXX1TaQYiBSgKawRpVWE%3D&_c=d30a3dd0a6459d0695d16604536bb29c")
+       Axios.get("https://www.infoclimat.fr/public-api/gfs/json?_ll=48.85341,2.3488&_auth=VU9QRwR6XX9TfgYxBXMKIwRsVWABdwIlC3cHZF86VClWPVU0VjZWMFM9VitSfQo8BSgEZ1phCTkKYVYuXC4FZFU%2FUDwEb106UzwGYwUqCiEEKlU0ASECJQtgB2FfLFQ1VjBVNFYrVjVTPFYqUmoKPwUpBHtaZAk0Cm5WOVwyBW9VMlA0BGVdOVMjBnsFMAprBDZVMQE4AjsLOQcxX2dUYVY3VTlWNlY2UyJWMVJiCjcFMwRtWmwJNgpsVi5cLgUfVUVQKQQnXX1TaQYiBSgKawRpVWE%3D&_c=d30a3dd0a6459d0695d16604536bb29c")
             .then((result) => {
                 setMeteo(result.data)
                 setIsReady(true)
