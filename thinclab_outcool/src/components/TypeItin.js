@@ -9,8 +9,9 @@ const typeItin = () => {
 
 
     return(
-        <div className="select-Prod">
-            <select>
+        <div className="select-prod">
+            <h1 className="Itin"> Itinéraire </h1>
+            <select className="prod-type">
                 <option> Blé </option>
                 <option> Brocoli </option>
                 <option> Tomate </option>
