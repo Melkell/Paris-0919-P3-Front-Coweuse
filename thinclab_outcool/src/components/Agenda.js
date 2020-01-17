@@ -41,7 +41,7 @@ export default class Agenda extends React.Component {
 			items: [],
 			selected: [],
 			cellHeight: (60 / 4),
-			showModal: false,
+			showModal: this.props.test,
 			locale: "fr",
 			rowsPerHour: 1,
 			numberOfDays: 7,
@@ -63,6 +63,14 @@ export default class Agenda extends React.Component {
 
 	componentDidMount() {
 		this.setState({ items: items })
+		console.log(this.props.addMission)
+	}
+
+	componentDidUpdate(prevProps) {
+		// Utilisation classique (pensez bien à comparer les props) :
+		if (this.props.addMission !== prevProps.addMission) {
+			this._openModal()
+		}
 	}
 
 	componentWillReceiveProps(next, last) {
@@ -149,7 +157,6 @@ export default class Agenda extends React.Component {
 
 	render() {
 		var AgendaItem = function (props) {
-			console.log(' item component props', props)
 			return <div style={{ display: 'block', position: 'absolute', background: '#FFF' }}>{props.item.name} <button onClick={() => props.edit(props.item)}>Edit </button></div>
 		}
 		return (
@@ -162,9 +169,9 @@ export default class Agenda extends React.Component {
 						<button className="button-control" onClick={this.changeView.bind(null, 4)}> {moment.duration(4, "days").humanize()}  </button>
 						<button className="button-control" onClick={this.changeView.bind(null, 3)}> {moment.duration(3, "days").humanize()}  </button>
 						<button className="button-control" onClick={this.changeView.bind(null, 1)}> {moment.duration(1, "day").humanize()} </button>
+						<button className="button-control" onClick={this._openModal}> <i className="schedule-icon"> + </i> </button>
 					*/}
-					<button className="button-control" onClick={this._openModal}> <i className="schedule-icon"> + </i> </button>
-				</div>
+					</div>
 
 				<ReactAgenda
 					className="ReactAgenda"
