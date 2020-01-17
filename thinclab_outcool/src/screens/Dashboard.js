@@ -5,6 +5,8 @@ import MissList from '../components/MissList'
 
 // Style//
 import './Dashboard.css'
+import Meteo from '../components/Meteo'
+import Listemission from './Listemission';
 
 const Dashboard = () => {
 	const [addMission, setaddMission] = useState(false);
