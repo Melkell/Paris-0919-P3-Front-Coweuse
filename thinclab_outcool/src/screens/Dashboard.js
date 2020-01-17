@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Agenda from '../components/Agenda'
 import MissList from '../components/MissList'
 
-// Style
+// Style//
 import './Dashboard.css'
 
 const Dashboard = () => {
