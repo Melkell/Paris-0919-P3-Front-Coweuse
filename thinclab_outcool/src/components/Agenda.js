@@ -5,6 +5,7 @@ import ReactAgenda from './reactAgenda'
 import { guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
 
 import './Agenda.css'
+import './reactAgenda'
 
 require('moment/locale/fr.js'); // this is important for traduction purpose
 

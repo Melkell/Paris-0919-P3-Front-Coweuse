@@ -1,56 +1,16 @@
-.Mission {
+.List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 3% 15%;
     background: #555;
-    width: 220px;
-    margin: 20px auto ;
-    display: flex;
-    justify-content: center;
-}
-
-.Mission:hover{
-    cursor: pointer
-}
-
-
-.Mission2 {
-    padding: 3% 15%;
-    background: #555;
-    width: 220px;
-    margin: 20px auto ;
-    display: flex;
-    justify-content: center;
-
-}
-
-.Mission3 {
-    padding: 3% 15%;
-    background: #555;
-    width: 220px;
-    margin: 20px auto ;
-    display: flex;
-    justify-content: center;
-
-}
-
-.Mission4 {
-    padding: 3% 15%;
-    background: #555;
-    width: 220px;
-    margin: 20px auto ;
-    display: flex;
-    justify-content: center;
-
-}
-
-
-.nameMission{
-    color:white;
-}
-
-.date{
     color: white;
+    width: 220px;
+    margin: 20px auto ;
+    display: flex;
+    justify-content: center;
 }
 
-.brocoli{
-    color: white;
+.List{
+    cursor: pointer;
 }

@@ -1,2 +1,7 @@
-@import "~react-agenda/build/styles.css";
+@import "./styles.css";
 @import "~react-datetime/css/react-datetime.css";
+
+body {
+  margin: 0;
+  padding: 0;
+}
