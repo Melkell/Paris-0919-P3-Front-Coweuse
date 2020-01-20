@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from 'react'
 import Agenda from '../components/Agenda'
 import MissList from '../components/MissList'
+import Meteo from '../components/Meteo'
 
 // Style//
 import './Dashboard.css'
-import Meteo from '../components/Meteo'
-import Listemission from './Listemission';
 
 const Dashboard = () => {
 	const [addMission, setaddMission] = useState(false);
@@ -14,16 +13,18 @@ const Dashboard = () => {
 
 	const getMission = (e) => {
 		setaddMission(!addMission)
-		
+
 	}
 
 	return (
 		<div className="Dashboard">
-			<div className="Dashboard-Meteo">
-				<Meteo />
-			</div>
-			<div className="Dashboard-Schedule">
-				<Agenda addMission={addMission}/>
+			<div className="Left">
+				<div className="Dashboard-Meteo">
+					<Meteo />
+				</div>
+				<div className="Dashboard-Schedule">
+					<Agenda addMission={addMission} />
+				</div>
 			</div>
 			<div className="Dashboard-List">
 				<MissList getMission={getMission} />
@@ -31,5 +32,7 @@ const Dashboard = () => {
 		</div>
 	)
 }
+
+
 
 export default Dashboard

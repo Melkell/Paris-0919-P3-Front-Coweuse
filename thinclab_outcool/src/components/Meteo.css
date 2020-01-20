@@ -1,14 +1,22 @@
-.Meteo-Card {
-    margin: 5px;
-    border-radius: 10px;
-    border: 2px solid black;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 12% ;
+.Meteo {
+	padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.Meteo-Temperature {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    font-size: 200%;
-    text-align: center;
+.Meteo-Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Meteo-Temperature {  
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
