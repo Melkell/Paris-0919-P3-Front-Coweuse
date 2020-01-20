@@ -219,7 +219,6 @@ padding: 8px;
 
 .agenda__table.\--body {
     height: calc(65vh);
-    overflow: overlay;
     -webkit-transform: translate3d(0,0,0);
 }
 

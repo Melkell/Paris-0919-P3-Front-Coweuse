@@ -1,33 +1,30 @@
 .Dashboard {
   margin: 0;
   padding: 0;
+  display: flex;
   height: 90vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+}
+
+.Left {
+  margin: 0;
+  padding: 0;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .Dashboard-Meteo {
-  margin: 0;
-  padding: 0;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  height: 20%;
 }
 
-.Dashboard-Schedule {
-  margin: 0;
-  padding: 0;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 4;
+.Dashboard-Schedule{
+  height: 80%;
 }
 
 .Dashboard-List {
   margin: 0;
   padding: 0;
-  grid-row-start: 1;
-  grid-row-end: 4;
+  width: 35%;
 }
