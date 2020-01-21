@@ -108,7 +108,6 @@ export default class ReactAgendaCtrl extends Component {
 
 
   dispatchEvent(obj) {
-    console.log(this.props.items)
     var newAdded = []
     var items = this.props.items;
     if (obj['multiple']) {
@@ -165,6 +164,8 @@ export default class ReactAgendaCtrl extends Component {
       tool1: this.state.tool1,
       tool2: this.state.tool2
     }
+    axios.put('http://localhost:4000/api/dashboard/equipements', newObj)
+      .then((result) => console.log(result))
     this.dispatchEvent(newObj);
   }
 
@@ -190,7 +191,6 @@ export default class ReactAgendaCtrl extends Component {
     }
   }
 
-
   handleSubmit(e) {
     e.preventDefault();
     this.addEvent(e);
@@ -215,9 +215,7 @@ export default class ReactAgendaCtrl extends Component {
     const divStyle = {};
 
     if (this.state.editMode) {
-
       var select = this.props.selectedCells[0];
-
       return (
         <div className="agendCtrls-wrapper" style={divStyle}>
           <form onSubmit={this.handleEdit}>
@@ -271,7 +269,7 @@ export default class ReactAgendaCtrl extends Component {
               <label>Outil 1</label>
               <select name="tool1" onChange={this.handleChange.bind(this)} >
                 <option value="">--Select--</option>
-                {this.state.tools.map(option => (<option value={option.name}>{option.name}</option>))}
+                {this.state.tools.map(option => (<option key={option.name} value={option.name}>{option.name}</option>))}
               </select>
             </div>
             <div className="agendCtrls-label-inline">
