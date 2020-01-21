@@ -6,6 +6,8 @@ import { guid, getUnique, getLast, getFirst } from './helpers.js';
 import Rdate from 'react-datetime';
 import './reactAgendaCtrl.css';
 
+import axios from 'axios'
+
 var now = new Date();
 
 /*const optionsTools = [
@@ -24,6 +26,7 @@ export default class ReactAgendaCtrl extends Component {
       multiple: {},
       name: 'Insert mission',
       classes: 'priority-1',
+      tools: [],
       tool1: '',
       tool2: '',
       startDateTime: now,
@@ -38,6 +41,8 @@ export default class ReactAgendaCtrl extends Component {
   }
 
   componentDidMount() {
+    axios.get(`http://localhost:4000/api/dashboard/equipements`)
+      .then((result) => this.setState({ tools: result.data }))
 
     if (this.props.itemColors) {
       this.setState({
@@ -134,7 +139,7 @@ export default class ReactAgendaCtrl extends Component {
   }
 
   addEvent(e) {
-   if (this.props.selectedCells && this.props.selectedCells.length > 0) {
+    if (this.props.selectedCells && this.props.selectedCells.length > 0) {
 
       var obj = this.props.selectedCells.reduce((r, v, i, a, k = v.substring(0, 10)) => ((r[k] = r[k] || []).push(v), r), {});
 
@@ -224,18 +229,14 @@ export default class ReactAgendaCtrl extends Component {
                 <label>Outil 1</label>
                 <select name="tool1" onChange={this.handleChange.bind(this)} >
                   <option value="">--Select--</option>
-                  <option value="outil A">outil A</option>
-                  <option value="outil B">outil B</option>
-                  <option value="outil C">outil C</option>
+                  {this.state.tools.map(option => (<option value={option.name}>{option.name}</option>))}
                 </select>
               </div>
               <div className="agendCtrls-label-inline ">
                 <label>Outil 2</label>
-                <select name="tool2" onChange={this.handleChange.bind(this)} >
+                <select name="tool1" onChange={this.handleChange.bind(this)} >
                   <option value="">--Select--</option>
-                  <option value="outil 1">outil 1</option>
-                  <option value="outil 2">outil 2</option>
-                  <option value="outil 3">outil 3</option>
+                  {this.state.tools.map(option => (<option value={option.name}>{option.name}</option>))}
                 </select>
               </div>
             </div>
@@ -270,18 +271,14 @@ export default class ReactAgendaCtrl extends Component {
               <label>Outil 1</label>
               <select name="tool1" onChange={this.handleChange.bind(this)} >
                 <option value="">--Select--</option>
-                <option value="outil A">outil A</option>
-                <option value="outil B">outil B</option>
-                <option value="outil C">outil C</option>
+                {this.state.tools.map(option => (<option value={option.name}>{option.name}</option>))}
               </select>
             </div>
             <div className="agendCtrls-label-inline">
               <label>Outil 2</label>
               <select name="tool2" onChange={this.handleChange.bind(this)} >
                 <option value="">--Select--</option>
-                <option value="outil 1">outil 1</option>
-                <option value="outil 2">outil 2</option>
-                <option value="outil 3">outil 3</option>
+                {this.state.tools.map(option => (<option value={option.name}>{option.name}</option>))}
               </select>
             </div>
           </div>
