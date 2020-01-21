@@ -75,8 +75,8 @@ const TypeItin = () => {
     }, [])
 
     return (
-        <div className="select-prod">
-            <h1 className="Itin"> Itinéraire </h1>
+        <div className="TypeItin">
+            <h1 className="TypeItin-Title"> Itinéraire </h1>
             <select className="TypeItin-Select">
                 <option value={null}>Choose a ressource</option>
                 {prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
