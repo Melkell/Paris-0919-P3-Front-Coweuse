@@ -38,6 +38,33 @@ const TypeItin = () => {
         })
     }
 
+    const changeRessourceType = () => {
+        switch (ressourceType) {
+            case "Animal":
+                return (
+                    <div>
+                        <ul>
+                            <li>1. Nourrir</li>
+                            <li>2. Surveiller</li>
+                            <li>3. Récupérer les ressources</li>
+                        </ul>
+                    </div>
+                )
+            case "Céréale":
+                return (
+                    <div>
+                        <ul>
+                            <li>1. Préparer le sol</li>
+                            <li>2. Planter les graines</li>
+                            <li>3. Arroser les pousses</li>
+                            <li>4. Récolter</li>
+                        </ul>
+                    </div>
+                )
+            default:
+                break;
+        }
+    }
 
     // Search the production types
     useEffect(() => {
@@ -46,7 +73,6 @@ const TypeItin = () => {
         setProdType(['Blé', 'Avoine', 'Bovidés', 'Volailles'])
         handleSelect()
     }, [])
-
 
     return (
         <div className="select-prod">
