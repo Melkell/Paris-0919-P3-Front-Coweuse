@@ -1,5 +1,8 @@
 // Librairies
 import React, { useState, useEffect } from 'react'
+
+import axios from 'axios'
+
 import Agenda from '../components/Agenda'
 import MissList from '../components/MissList'
 import Meteo from '../components/Meteo'
@@ -10,10 +13,19 @@ import './Dashboard.css'
 const Dashboard = () => {
 	const [addMission, setaddMission] = useState(false);
 	const [items, setItems] = useState([]);
+	const [item, setItem] = useState([]);
+
+	useEffect(() => {
+		console.log("hello use effect")
+		axios.get(`http://localhost:4000/api/dashboard/missions`)
+		.then((result) => setItems(result.data))
+	}, [])
+
 
 	const getMission = (e) => {
 		setaddMission(!addMission)
-
+		const selected = Number(e.target.id)
+		setItem(items[selected])
 	}
 
 	return (
@@ -23,11 +35,11 @@ const Dashboard = () => {
 					<Meteo />
 				</div>
 				<div className="Dashboard-Schedule">
-					<Agenda addMission={addMission} />
+					<Agenda addMission={addMission} mission={item}/>
 				</div>
 			</div>
 			<div className="Dashboard-List">
-				<MissList getMission={getMission} />
+				<MissList getMission={getMission} missions={items}/>
 			</div>
 		</div>
 	)
