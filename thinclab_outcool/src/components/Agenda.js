@@ -47,6 +47,7 @@ export default class Agenda extends React.Component {
 			rowsPerHour: 1,
 			numberOfDays: 7,
 			startDate: new Date(),
+			mission: null
 		}
 		this.handleRangeSelection = this.handleRangeSelection.bind(this)
 		this.handleItemEdit = this.handleItemEdit.bind(this)
@@ -64,7 +65,7 @@ export default class Agenda extends React.Component {
 
 	componentDidMount() {
 		this.setState({ items: items })
-		console.log(this.props.addMission)
+		this.props.missions.find(mission => mission.id === this.props.selected)
 	}
 
 	componentDidUpdate(prevProps) {
@@ -153,7 +154,6 @@ export default class Agenda extends React.Component {
 
 	handleTool(tool) {
 		this.setState({ tool: tool })
-		//console.log(this.state.tool)
 	}
 
 	render() {
@@ -172,7 +172,7 @@ export default class Agenda extends React.Component {
 						<button className="button-control" onClick={this.changeView.bind(null, 1)}> {moment.duration(1, "day").humanize()} </button>
 						<button className="button-control" onClick={this._openModal}> <i className="schedule-icon"> + </i> </button>
 					*/}
-					</div>
+				</div>
 
 				<ReactAgenda
 					className="ReactAgenda"
@@ -204,7 +204,7 @@ export default class Agenda extends React.Component {
 				{
 					this.state.showModal ? <Modal clickOutside={this._closeModal} >
 						<div className="modal-content">
-							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} />
+							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} new={this.props.missions.find(mission => mission.id === this.props.selected)}/>
 						</div>
 					</Modal> : ''
 				}

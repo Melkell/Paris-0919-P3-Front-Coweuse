@@ -4,15 +4,12 @@ import "./List.css";
 
 const List = ({ props, getMission }) => {
 	return (
-		<div className="List" onClick={getMission}>
+		<div className="List" id={props.id} onClick={getMission}>
 			<div>
-				<p className="nameMission">{props.name}</p>
+				<p className="nameMission">Mission : {props.name}</p>
 			</div>
 			<div>
-				<p className="date">{props.date}</p>
-			</div>
-			<div>
-				<p className="brocoli">{props.brocoli}</p>
+				<p className="date">Tache_id : {props.tache_id}</p>
 			</div>
 		</div>
 	)

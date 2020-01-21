@@ -134,17 +134,13 @@ export default class ReactAgendaCtrl extends Component {
   }
 
   addEvent(e) {
-    /*if (this.state.name.length < 1) {
-      return;
-    }*/
-
-    if (this.props.selectedCells && this.props.selectedCells.length > 0) {
+   if (this.props.selectedCells && this.props.selectedCells.length > 0) {
 
       var obj = this.props.selectedCells.reduce((r, v, i, a, k = v.substring(0, 10)) => ((r[k] = r[k] || []).push(v), r), {});
 
       if (Object.values(obj).length > 1) {
         var newObj = {
-          name: this.state.name,
+          name: this.props.new.name,
           startDateTime: new Date(this.state.startDateTime),
           endDateTime: new Date(this.state.endDateTime),
           classes: this.state.classes,
@@ -157,7 +153,7 @@ export default class ReactAgendaCtrl extends Component {
     }
 
     var newObj = {
-      name: this.state.name,
+      name: this.props.new.name,
       startDateTime: new Date(this.state.startDateTime),
       endDateTime: new Date(this.state.endDateTime),
       classes: this.state.classes,
@@ -171,7 +167,7 @@ export default class ReactAgendaCtrl extends Component {
     if (this.props.selectedCells[0]._id && this.props.items) {
       var newObj = {
         _id: this.props.selectedCells[0]._id,
-        name: this.state.name,
+        name: this.props.new.name,
         startDateTime: new Date(this.state.startDateTime),
         endDateTime: new Date(this.state.endDateTime),
         classes: this.state.classes,
@@ -220,7 +216,8 @@ export default class ReactAgendaCtrl extends Component {
       return (
         <div className="agendCtrls-wrapper" style={divStyle}>
           <form onSubmit={this.handleEdit}>
-            <h1>{this.state.name}</h1>
+            <h1>{this.props.new.name}</h1>
+            <h3>tache_id : {this.props.new.tache_id}</h3>
             <div className="agendCtrls-radio-wrapper">{colors}</div>
             <div className="agendCtrls-label-wrapper">
               <div className="agendCtrls-label-inline">
@@ -263,7 +260,8 @@ export default class ReactAgendaCtrl extends Component {
     return (
       <div className="agendCtrls-wrapper" style={divStyle}>
         <form onSubmit={this.handleSubmit}>
-          <h1>{this.state.name}</h1>
+          <h1>{this.props.new.name}</h1>
+          <h3>tache_id : {this.props.new.tache_id}</h3>
           <div className="agendCtrls-radio-wrapper">
             {colors}
           </div>
