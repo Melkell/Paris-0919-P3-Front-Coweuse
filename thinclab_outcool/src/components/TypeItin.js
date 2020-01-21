@@ -49,6 +49,8 @@ const TypeItin = () => {
                             <li>2. Surveiller</li>
                             <li>3. Récupérer les ressources</li>
                         </ul>
+                        <input type="button" value="Add misions" />
+                        <input type="button" value="Submit" />
                     </div>
                 )
             case "Céréale":
@@ -61,10 +63,12 @@ const TypeItin = () => {
                             <li>4. Repousser les nuisibles</li>
                             <li>5. Récolter</li>
                         </ul>
+                        <input type="button" value="Add misions" />
+                        <input type="button" value="Submit" />
                     </div>
                 )
             default:
-                break;
+                break
         }
     }
 
