@@ -44,18 +44,20 @@ const TypeItin = () => {
             case "Animal":
                 return (
                     <div>
+                        <input type="button" value="Add misions" />
+                        <input type="button" value="Submit" />
                         <ul>
                             <li>1. Nourrir</li>
                             <li>2. Surveiller</li>
                             <li>3. Récupérer les ressources</li>
                         </ul>
-                        <input type="button" value="Add misions" />
-                        <input type="button" value="Submit" />
                     </div>
                 )
             case "Céréale":
                 return (
                     <div>
+                        <input type="button" value="Add misions" />
+                        <input type="button" value="Submit" />
                         <ul>
                             <li>1. Préparer le sol</li>
                             <li>2. Planter les graines</li>
@@ -63,8 +65,6 @@ const TypeItin = () => {
                             <li>4. Repousser les nuisibles</li>
                             <li>5. Récolter</li>
                         </ul>
-                        <input type="button" value="Add misions" />
-                        <input type="button" value="Submit" />
                     </div>
                 )
             default:
