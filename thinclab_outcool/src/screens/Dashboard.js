@@ -13,19 +13,18 @@ import './Dashboard.css'
 const Dashboard = () => {
 	const [addMission, setaddMission] = useState(false);
 	const [items, setItems] = useState([]);
-	const [item, setItem] = useState([]);
+	const [itemIndex, setItemIndex] = useState(0);
 
 	useEffect(() => {
-		console.log("hello use effect")
 		axios.get(`http://localhost:4000/api/dashboard/missions`)
-		.then((result) => setItems(result.data))
+			.then((result) => setItems(result.data))
 	}, [])
 
 
 	const getMission = (e) => {
-		setaddMission(!addMission)
 		const selected = Number(e.target.id)
-		setItem(items[selected])
+		setItemIndex(selected)
+		setaddMission(!addMission)
 	}
 
 	return (
@@ -35,11 +34,11 @@ const Dashboard = () => {
 					<Meteo />
 				</div>
 				<div className="Dashboard-Schedule">
-					<Agenda addMission={addMission} mission={item}/>
+					<Agenda addMission={addMission} missions={items} selected={itemIndex} />
 				</div>
 			</div>
 			<div className="Dashboard-List">
-				<MissList getMission={getMission} missions={items}/>
+				<MissList getMission={getMission} missions={items} />
 			</div>
 		</div>
 	)

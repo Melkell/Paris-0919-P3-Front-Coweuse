@@ -57,7 +57,6 @@ const Meteo = () => {
 	const getCurrentMeteo = (array) => {
 		for (let [key, value] of Object.entries(array)) {
 			if (key === currentDate) {
-				console.log(value)
 				currentMeteo = value
 			}
 		}
@@ -93,13 +92,11 @@ const Meteo = () => {
 			let lat = position.coords.latitude
 			let lng = position.coords.longitude
 			Axios.get(`https://www.prevision-meteo.ch/services/json/lat=${lat}lng=${lng}`)
-				.then((result) => console.log(result))
 		})
 	}
 
 	return (
 		<div className="Meteo">
-			{console.log(currentDate)}
 			{isReady ? getCurrentMeteo(meteo) : ''}
 			<div className="Meteo-Card" onLoad={changeColor()}>
 				{currentMeteo !== undefined ? (

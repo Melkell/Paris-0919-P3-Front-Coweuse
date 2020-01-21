@@ -3,14 +3,13 @@ import React from "react";
 import "./List.css";
 
 const List = ({ props, getMission }) => {
-	console.log(props)
 	return (
 		<div className="List" id={props.id} onClick={getMission}>
 			<div>
-				<p className="nameMission">Nom : {props.name}</p>
+				<p className="nameMission">Mission : {props.name}</p>
 			</div>
 			<div>
-				<p className="date">Tache : {props.tache_id}</p>
+				<p className="date">Tache_id : {props.tache_id}</p>
 			</div>
 		</div>
 	)
