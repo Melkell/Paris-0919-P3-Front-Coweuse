@@ -4,7 +4,7 @@ import List from "./List.js"
 
 import './MissList.css'
 
-const MissList = ({ getMission }) => {
+const MissList = ({ getMission, missions }) => {
 	const missionList = [
 		{
 			name: "Brocoli",
@@ -60,7 +60,7 @@ const MissList = ({ getMission }) => {
 	
 	return (
 		<div className="Misslist">
-			{missionList.map(item => (<List props={item} getMission={getMission} />))}
+			{missions.map(item => (<List props={item} getMission={getMission} />))}
 		</div>
 	)
 }
