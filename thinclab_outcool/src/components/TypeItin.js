@@ -34,10 +34,11 @@ const TypeItin = () => {
                 default:
                     setRessourceType(null)
             }
-        
+
         })
     }
 
+    // According to the production type (animal, plants), we display a list of main tasks
     const changeRessourceType = () => {
         switch (ressourceType) {
             case "Animal":
@@ -57,7 +58,8 @@ const TypeItin = () => {
                             <li>1. Préparer le sol</li>
                             <li>2. Planter les graines</li>
                             <li>3. Arroser les pousses</li>
-                            <li>4. Récolter</li>
+                            <li>4. Repousser les nuisibles</li>
+                            <li>5. Récolter</li>
                         </ul>
                     </div>
                 )
@@ -81,7 +83,9 @@ const TypeItin = () => {
                 <option value={null}>Choose a ressource</option>
                 {prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
             </select>
-            {ressourceType !== null ? changeRessourceType() : 'Waiting for a selection'}
+            <div>
+                {ressourceType !== null ? changeRessourceType() : 'Waiting for a selection'}
+            </div>
         </div>
     )
 }
