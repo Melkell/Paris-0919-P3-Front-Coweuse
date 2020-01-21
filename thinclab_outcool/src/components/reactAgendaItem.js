@@ -99,14 +99,11 @@ export default class ReactAgendaItem extends Component {
 						</a>
 					</div> : ''}
 			</div>
-
+					
 			<div className="agenda-item-description">
 				<section>{this.props.item.name}</section>
 				<p>{tool1}</p>
 				<p>{tool2}</p>
-				<small>
-					{duratL} - {duratE}
-				</small>
 			</div>
 
 		</div>
