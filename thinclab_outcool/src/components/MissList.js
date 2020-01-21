@@ -7,7 +7,7 @@ import './MissList.css'
 const MissList = ({ getMission, missions }) => {
 	return (
 		<div className="Misslist">
-			{missions.map(item => (<List props={item} getMission={getMission} />))}
+			{missions.map(item => (<List key={item.id} props={item} getMission={getMission} />))}
 		</div>
 	)
 }
