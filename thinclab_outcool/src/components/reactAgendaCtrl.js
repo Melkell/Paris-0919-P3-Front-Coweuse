@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { guid, getUnique, getLast, getFirst } from './helpers.js';
+import { guid, getUnique, getLast, getFirst, mapItems } from './helpers.js';
 import Rdate from 'react-datetime';
 import './reactAgendaCtrl.css';
 

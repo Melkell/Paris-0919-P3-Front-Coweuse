@@ -4,6 +4,8 @@ import ReactAgendaCtrl from './reactAgendaCtrl'
 import ReactAgenda from './reactAgenda'
 import { guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
 
+import axios from 'axios'
+
 import './Agenda.css'
 import './reactAgenda'
 
@@ -64,8 +66,13 @@ export default class Agenda extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({ items: items })
+		axios.get(`http://localhost:4000/api/dashboard/missions`)
+			//.then((result) => result.data.map(item => items.push(new Object({_id: item.id, name: item.name, startDateTime: item.start_date, endDateTime: end_date, classes: ''}))))
+		.then((result) => console.log(new Date(result.data[0].start_date.toString())))
+		//this.setState({ items: items })
 		this.props.missions.find(mission => mission.id === this.props.selected)
+		//console.log(items)
+		console.log(new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 13, 0))
 	}
 
 	componentDidUpdate(prevProps) {
@@ -204,7 +211,7 @@ export default class Agenda extends React.Component {
 				{
 					this.state.showModal ? <Modal clickOutside={this._closeModal} >
 						<div className="modal-content">
-							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} new={this.props.missions.find(mission => mission.id === this.props.selected)}/>
+							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} new={this.props.missions.find(mission => mission.id === this.props.selected)} />
 						</div>
 					</Modal> : ''
 				}
