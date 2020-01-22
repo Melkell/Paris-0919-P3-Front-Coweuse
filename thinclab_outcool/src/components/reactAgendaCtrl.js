@@ -2,20 +2,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { guid, getUnique, getLast, getFirst } from './helpers.js';
+import { guid, getUnique, getLast, getFirst, mapItems } from './helpers.js';
 import Rdate from 'react-datetime';
 import './reactAgendaCtrl.css';
 
 import axios from 'axios'
 
 var now = new Date();
-
-/*const optionsTools = [
-  { value: '', label: 'choixoutil' },
-  { value: 'outil A', label: 'outil 1' },
-  { value: 'outil B', label: 'outil 2' },
-  { value: 'outil C', label: 'outil 3' }
-];*/
 
 export default class ReactAgendaCtrl extends Component {
   constructor() {
