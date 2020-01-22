@@ -7,13 +7,14 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header'
 import Dashboard from './screens/Dashboard';
-import Admin from './components/Admin';
+import Form from './components/Form';
+import Formconnection from './components/Formconnection';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <Dashboard />
+      <Formconnection />
     </div>
   )
 }
