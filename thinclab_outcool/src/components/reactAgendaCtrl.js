@@ -10,13 +10,6 @@ import axios from 'axios'
 
 var now = new Date();
 
-/*const optionsTools = [
-  { value: '', label: 'choixoutil' },
-  { value: 'outil A', label: 'outil 1' },
-  { value: 'outil B', label: 'outil 2' },
-  { value: 'outil C', label: 'outil 3' }
-];*/
-
 export default class ReactAgendaCtrl extends Component {
   constructor() {
     super();
