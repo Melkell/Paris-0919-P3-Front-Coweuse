@@ -47,24 +47,36 @@ const TypeItin = () => {
                         <input type="button" value="Add misions" />
                         <input type="button" value="Submit" />
                         <ul>
-                            <li>1. Nourrir</li>
-                            <li>2. Surveiller</li>
-                            <li>3. Récupérer les ressources</li>
+                            <li> Nourrir </li>
+                            <li> Surveiller </li>
+                            <li> Récupérer les ressources </li>
                         </ul>
                     </div>
                 )
             case "Céréale":
                 return (
                     <div>
-                        <input type="button" value="Add misions" />
-                        <input type="button" value="Submit" />
-                        <ul>
-                            <li>1. Préparer le sol</li>
-                            <li>2. Planter les graines</li>
-                            <li>3. Arroser les pousses</li>
-                            <li>4. Repousser les nuisibles</li>
-                            <li>5. Récolter</li>
-                        </ul>
+                        <div className="button-conatiner">
+                            <input type="button" value="Add misions" />
+                            <input type="button" value="Submit" />
+                        </div>
+                        <div className="miss-card-container">
+                            <div className="miss-card-céréale">
+                                <p> Préparer le sol </p>
+                            </div>
+                            <div className="miss-card-céréale">
+                                <p> Planter les graines </p>
+                            </div>
+                            <div className="miss-card-céréale">
+                                <p> Arroser les pousses </p>
+                            </div>
+                            <div className="miss-card-céréale">
+                                <p> Repousser les nuisibles </p>
+                            </div>
+                            <div className="miss-card-céréale">
+                                <p> Récolter </p>
+                            </div>
+                        </div>
                     </div>
                 )
             default:
