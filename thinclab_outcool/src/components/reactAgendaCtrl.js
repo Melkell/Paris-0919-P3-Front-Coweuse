@@ -151,6 +151,7 @@ export default class ReactAgendaCtrl extends Component {
     }
 
     var newObj = {
+      id: this.props.new.id,
       name: this.props.new.name,
       startDateTime: new Date(this.state.startDateTime),
       endDateTime: new Date(this.state.endDateTime),

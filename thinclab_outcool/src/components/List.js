@@ -10,6 +10,8 @@ const List = ({ props, getMission }) => {
 			</div>
 			<div>
 				<p className="date">Tache_id : {props.tache_id}</p>
+				<p className="date">id : {props.id}</p>
+				<p className="date">Itineraire_id : {props.itineraire_id}</p>
 			</div>
 		</div>
 	)
