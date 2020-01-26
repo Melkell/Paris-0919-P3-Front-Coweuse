@@ -34,6 +34,7 @@ export default class ReactAgendaCtrl extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     axios.get(`http://localhost:4000/api/dashboard/equipements`)
       .then((result) => this.setState({ tools: result.data }))
 
@@ -150,6 +151,7 @@ export default class ReactAgendaCtrl extends Component {
     }
 
     var newObj = {
+      id: this.props.new.id,
       name: this.props.new.name,
       startDateTime: new Date(this.state.startDateTime),
       endDateTime: new Date(this.state.endDateTime),
@@ -157,8 +159,8 @@ export default class ReactAgendaCtrl extends Component {
       tool1: this.state.tool1,
       tool2: this.state.tool2
     }
-    axios.put('http://localhost:4000/api/dashboard/equipements', newObj)
-      .then((result) => console.log(result))
+    axios.put('http://localhost:4000/api/dashboard/missionsUser', newObj)
+      .then((result) => console.log(result.data))
     this.dispatchEvent(newObj);
   }
 
