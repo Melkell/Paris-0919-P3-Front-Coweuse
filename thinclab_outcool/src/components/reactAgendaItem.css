@@ -14,6 +14,7 @@
 }
 
 .agenda-cell-item {
+  height: 30%;
   font-size: 14px;
   overflow: hidden;
   display: flex;
@@ -32,17 +33,17 @@
 }
 
 .agenda-item-description {
-  padding: 8px;
-  font-size: 12px;
+  padding: 0px;
+  font-size: 6px;
 }
 
 .agenda-item-description section {
-  font-size: 12px;
+  font-size: 6px;
 }
 
 .agenda-item-description small {
   color: #ff0000;
-  font-size: 12px;
+  font-size: 6px;
 }
 
 .agenda-controls-item {
