@@ -5,6 +5,8 @@ import Axios from 'axios'
 // Styles
 import './Meteo.css'
 
+var imgMeteo = '';
+
 const Meteo = () => {
 
 	const [currentDate, setCurrentDate] = useState('')
@@ -72,7 +74,7 @@ const Meteo = () => {
 			let x = 50 + (currentMeteo.nebulosite.totale / 100 * 30)
 			let y = 215 + (currentMeteo.nebulosite.totale / 100 * (-110))
 			let z = 255 + (currentMeteo.nebulosite.totale / 100 * (-145))
-			document.querySelector('.Meteo-Card').style.background = `rgb(${x}, ${y}, ${z})`
+			document.querySelector('.Meteo-Card').style.background = `rgb(${x}, ${y}, ${z}, 0.5)`
 		}
 	}
 	// Change meteo description
@@ -94,9 +96,8 @@ const Meteo = () => {
 			Axios.get(`https://www.prevision-meteo.ch/services/json/lat=${lat}lng=${lng}`)
 		})
 	}
-
 	return (
-		<div className="Meteo">
+		<div className="Meteo" >
 			{isReady ? getCurrentMeteo(meteo) : ''}
 			<div className="Meteo-Card" onLoad={changeColor()}>
 				{currentMeteo !== undefined ? (

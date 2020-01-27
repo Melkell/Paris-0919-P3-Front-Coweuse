@@ -12,9 +12,9 @@ import './reactAgenda'
 require('moment/locale/fr.js'); // this is important for traduction purpose
 
 var colors = {
-	'color-1': "rgba(88,119,149,1)",
-	"color-2": "rgba(232,232,232,1)",
-	"color-3": "rgba(170,170,170,1)"
+	'color-1': "rgba(46,167,65,1)",
+	"color-2": "rgba(152,212,37,1)",
+	"color-3": "rgba(232,232,232,1)"
 }
 
 var now = new Date();
@@ -66,7 +66,7 @@ export default class Agenda extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get(`http://localhost:4000/api/dashboard/missions`)
+		axios.get(`http://localhost:4000/api/dashboard/mission/:id`)
 			.then((result) => result.data.map(item => items.push(new Object({_id: item.id, name: item.name, startDateTime: new Date(item.start_date), endDateTime: new Date(item.end_date), classes: 'color-3'}))))
 		this.setState({ items: items })
 		this.props.missions.find(mission => mission.id === this.props.selected)
