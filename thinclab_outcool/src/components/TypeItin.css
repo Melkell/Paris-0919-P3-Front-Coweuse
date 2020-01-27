@@ -9,16 +9,13 @@ body {
 }
 
 .TypeItin-Select{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
     display: block;
     margin: 0 auto;
 }
 
 .IDk{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: grid;
     justify-content: center;
 }
 
@@ -57,7 +54,15 @@ h1 {
     justify-content: center;
 }
 
-input {
+
+.nb-parce{
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+    width: 12%;
+}
+
+.btn-itin {
     background-color: transparent;
     border: 0px solid;
     height: 20px;
@@ -93,6 +98,7 @@ input {
 .btn-itin:hover {
     font-weight: bold;
     letter-spacing: 2px;
+    color: #00B74D;
 }
 
 .btn-itin:hover:after, .btn-itin:hover:before {

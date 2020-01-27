@@ -64,6 +64,7 @@ const TypeItin = () => {
             case "Céréale":
                 return (
                     <div>
+                        <input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" />
                         <div className="button-container">
                             <input className="btn-itin" type="button" value="Add misions" />
                             <input className="btn-itin" type="button" value="Submit" />
@@ -108,7 +109,7 @@ const TypeItin = () => {
                 {prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
             </select>
             <div className="">
-                {ressourceType !== null ? changeRessourceType() : 'Waiting for a selection'}
+                {ressourceType !== null ? changeRessourceType() : ''}
             </div>
         </div>
     )
