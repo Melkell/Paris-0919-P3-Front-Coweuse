@@ -44,21 +44,29 @@ const TypeItin = () => {
             case "Animal":
                 return (
                     <div>
-                        <input type="button" value="Add misions" />
-                        <input type="button" value="Submit" />
-                        <ul>
-                            <li> Nourrir </li>
-                            <li> Surveiller </li>
-                            <li> Récupérer les ressources </li>
-                        </ul>
+                        <div className="button-container">
+                            <input className="btn-itin" type="button" value="Add misions" />
+                            <input className="btn-itin" type="button" value="Submit" />
+                        </div>
+                        <div className="miss-card-container">
+                            <div className="miss-card-céréale">
+                                <p> Nourrir </p>
+                            </div>
+                            <div className="miss-card-céréale">
+                                <p> Surveiller </p>
+                            </div>
+                            <div className="miss-card-céréale">
+                                <p> Récupérer les ressources </p>
+                            </div>
+                        </div>
                     </div>
                 )
             case "Céréale":
                 return (
                     <div>
-                        <div className="button-conatiner">
-                            <input type="button" value="Add misions" />
-                            <input type="button" value="Submit" />
+                        <div className="button-container">
+                            <input className="btn-itin" type="button" value="Add misions" />
+                            <input className="btn-itin" type="button" value="Submit" />
                         </div>
                         <div className="miss-card-container">
                             <div className="miss-card-céréale">
@@ -99,7 +107,7 @@ const TypeItin = () => {
                 <option value={null}>Choose a ressource</option>
                 {prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
             </select>
-            <div>
+            <div className="">
                 {ressourceType !== null ? changeRessourceType() : 'Waiting for a selection'}
             </div>
         </div>
