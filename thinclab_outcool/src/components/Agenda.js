@@ -14,7 +14,7 @@ require('moment/locale/fr.js'); // this is important for traduction purpose
 var colors = {
 	'color-1': "rgba(46,167,65,1)",
 	"color-2": "rgba(152,212,37,1)",
-	"color-3": "rgba(170,170,170,1)"
+	"color-3": "rgba(232,232,232,1)"
 }
 
 var now = new Date();
