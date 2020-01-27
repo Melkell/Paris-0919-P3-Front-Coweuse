@@ -77,7 +77,6 @@ export default class ReactAgendaItem extends Component {
 	}
 
 	render() {
-		console.log(this.props.item.startDateTime.getHours())
 		var duratH = moment.duration(this.props.item.duration._milliseconds, 'Milliseconds').humanize();
 		var duratL = moment(this.props.item.startDateTime).format("HH:mm")
 		var duratE = moment(this.props.item.endDateTime).format("HH:mm")
@@ -100,7 +99,7 @@ export default class ReactAgendaItem extends Component {
 						</a>
 					</div> : ''}
 			</div>
-					
+
 			<div className="agenda-item-description">
 				<section>{this.props.item.name}</section>
 				<section>{this.props.item.startDateTime.getHours()}h</section>

@@ -14,11 +14,12 @@ const Dashboard = () => {
 	const [addMission, setaddMission] = useState(false);
 	const [items, setItems] = useState([]);
 	const [itemIndex, setItemIndex] = useState(0);
+	const [userMissions, setUserMissions] = useState([]);
 
 	useEffect(() => {
 		axios.get(`http://localhost:4000/api/dashboard/missions`)
 			.then((result) => setItems(result.data))
-	}, [])
+	})
 
 
 	const getMission = (e) => {
