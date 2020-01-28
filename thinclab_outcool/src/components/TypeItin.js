@@ -1,5 +1,6 @@
 // Librairies
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 // Styles
 import './TypeItin.css'
 
@@ -9,6 +10,7 @@ const TypeItin = () => {
     // This state will receive all production types
     const [prodType, setProdType] = useState(null)
     const [ressourceType, setRessourceType] = useState(null)
+    const [slotNumber, setSlotNumber] = useState(null)
 
     // Select handler
     const handleSelect = () => {
@@ -38,6 +40,27 @@ const TypeItin = () => {
         })
     }
 
+    const submitMiss = () => {
+        setSlotNumber(document.querySelector('.nb-parce').value)
+
+
+
+
+        axios({
+            method: 'post',
+            url: 'localhost:3000/routes/itineraire',
+            data: body
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        // Pouf pouf requête POST blabla on a fini
+    }
+
+
     // According to the production type (animal, plants), we display a list of main tasks
     const changeRessourceType = () => {
         switch (ressourceType) {
@@ -64,11 +87,13 @@ const TypeItin = () => {
             case "Céréale":
                 return (
                     <div>
-                        <input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" />
-                        <div className="button-container">
-                            <input className="btn-itin" type="button" value="Add misions" />
-                            <input className="btn-itin" type="button" value="Submit" />
-                        </div>
+                        <form>
+                            <div className="button-container">
+                                <input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" />
+                                <input className="btn-itin" type="button" value="Add misions" />
+                                <input className="btn-itin" type="button" value="Submit" />
+                            </div>
+                        </form>
                         <div className="miss-card-container">
                             <div className="miss-card-céréale">
                                 <p> Préparer le sol </p>
