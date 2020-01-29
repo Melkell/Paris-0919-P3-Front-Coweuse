@@ -4,3 +4,10 @@
   height: 90vh;
   overflow: auto;
 }
+
+.Misslist {
+  margin: 0;
+  padding: 0;
+  height: 50vh;
+  overflow: auto;
+}

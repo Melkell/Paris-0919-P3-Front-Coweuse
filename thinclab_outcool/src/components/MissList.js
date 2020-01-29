@@ -4,10 +4,10 @@ import List from "./List.js"
 
 import './MissList.css'
 
-const MissList = ({ getMission, missions }) => {
+const MissList = ({ getMission, missions, admin }) => {
 	return (
-		<div className="Misslist">
-			{missions.map(item => (<List key={item.id} props={item} getMission={getMission} />))}
+		<div className= {admin ? "Misslist" : "Misslist-admin"}>
+			{missions.map(item => (<List key={item.id} props={item} getMission={getMission} admin={admin} />))}
 		</div>
 	)
 }

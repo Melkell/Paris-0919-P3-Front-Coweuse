@@ -11,6 +11,7 @@ import Form from './components/Form';
 import Formconnection from './components/Formconnection';
 // import DashboardAdmin from './components/DashboardAdmin';
 import Footer from './components/Footer';
+import DashboardAdmin from './screens/DashboardAdmin';
 
 const App = () => {
   return (
@@ -19,11 +20,12 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path='/dashboardCollab' component={Dashboard}/>
-          {/* <Route exact path='/dashboardAdmin' component={DashboardAdmin} /> */}
+          <Route exact path='/dashboardAdmin' component={DashboardAdmin} />
           <Route exact path='/login' component={Formconnection} />
           <Route exact path='/form' component={Form} />
         </Switch>
       </Router>
+      
     </div>
   )
 }
