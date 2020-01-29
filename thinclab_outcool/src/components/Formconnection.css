@@ -1,13 +1,26 @@
+img {
+	border: 0px;
+}
 
 .form-style-9{
-	max-width: 450px;
+	max-width: 500px;
 	background: #FAFAFA;
 	padding: 30px;
 	margin: 50px auto;
 	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 	border-radius: 10px;
-	border: 6px solid #305A72;
+	border: 2px solid #31B500;
 }
+
+.logoForm {
+	background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 90px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
 .form-style-9 ul{
 	padding:0;
 	margin:0;
@@ -52,20 +65,19 @@
 }
 .form-style-9 ul li input[type="button"], 
 .form-style-9 ul li input[type="submit"] {
-	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	box-shadow: inset 0px 1px 0px 0px #3985B1;
-	background-color: #216288;
-	border: 1px solid #17445E;
+	box-shadow: inset 0px 0px 0px 0px rgb 0000;
+	background-color: rgb(51, 160, 11);
 	display: inline-block;
 	cursor: pointer;
 	color: #FFFFFF;
 	padding: 8px 18px;
 	text-decoration: none;
 	font: 12px Arial, Helvetica, sans-serif;
+	border-radius: 5px;
 }
 .form-style-9 ul li input[type="button"]:hover, 
 .form-style-9 ul li input[type="submit"]:hover {
-	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
-	background-color: #28739E;
+	background: rgb(122, 221, 86);
+	background-color: #31B500;
+	border-radius: 5px;
 }

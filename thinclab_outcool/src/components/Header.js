@@ -1,5 +1,6 @@
-// Librairies
+// // Librairies
 import React from 'react'
+import Logo from '../Logo/logo.jpg'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -18,8 +19,7 @@ const Header = () => {
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Outcool <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Compte</a>
-            <a class="nav-item nav-link" href="#">déconect
-            </a>
+            <a class="nav-item nav-link" href="#">Déconnexion</a>
           </div>
         </div>
       </nav>
