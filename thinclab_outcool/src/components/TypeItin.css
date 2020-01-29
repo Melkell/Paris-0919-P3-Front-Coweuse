@@ -1,0 +1,111 @@
+body {
+    align-items: center;
+    justify-content: center;
+}
+
+.TypeInit {
+    padding: 0;
+    margin: 0;
+}
+
+.TypeItin-Select{
+    display: block;
+    margin: 0 auto;
+}
+
+.IDk{
+    display: flex;
+    flex-flow: grid;
+    justify-content: center;
+}
+
+
+
+h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: #00B74D;
+}
+
+.button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.miss-card-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.miss-card-céréale {
+    width: 30%;
+    padding: 5%;
+    border: 2px solid  #00B74D;
+    border-radius: 5px;
+    text-align: center;
+    margin: 1%;
+    background-color: #f8f9fa;
+}
+
+.TypeItin-Select{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+.nb-parce{
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+    width: 12%;
+    border: 1px solid;
+    border-color: #CCC;
+    border-radius: 5px;
+    color: black;
+}
+
+.btn-itin {
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 250px;
+    color: #CCC;
+    padding-top: 15px ;
+    padding-bottom: 30px;
+}
+
+.btn-itin {
+    color: black;
+    transition: .3s all;
+}
+
+.btn-itin:before, .btn-itin:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    transition: .3s all;
+}
+
+.btn-itin:before {
+    left: 0;
+    border-top: 2px solid green;
+}
+
+.btn-itin:after {
+    right: 0;
+    border-bottom: 2px solid green;
+}
+
+.btn-itin:hover {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #00B74D;
+}
+
+.btn-itin:hover:after, .btn-itin:hover:before {
+    width: 100%;
+}
