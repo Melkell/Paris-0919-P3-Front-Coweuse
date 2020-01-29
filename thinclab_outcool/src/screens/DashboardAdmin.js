@@ -15,7 +15,7 @@ const DashboardAdmin = () => {
 	const admin = true;
 
 	useEffect(() => {
-		axios.get(`http://localhost:4000/api/dashboard/missions`)
+		axios.get(`http://localhost:4000/api/exploitation/missions`)
 			.then((result) => setItems(result.data))
 	})
 
