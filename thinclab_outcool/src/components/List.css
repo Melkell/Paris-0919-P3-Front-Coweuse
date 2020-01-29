@@ -11,6 +11,30 @@
   text-align: center;
   background: #e8e8e8;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 6px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
   cursor: pointer;
+}
+
+.List-admin {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin: 0 10px 10px 10px;
+  padding-top: 0;
+  font-size: 0.8em;
+  background: white;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+  cursor: pointer;
+}
+
+.color-indication {
+  margin: 0;
+  padding: 0;
+  width: 5px;
+  height: 80px;
+}
+
+.item-container {
+  margin-left: 25px;
 }
