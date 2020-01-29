@@ -1,4 +1,27 @@
-img{
-    height: 112px;
-    width: 330px;
+.Header {
+	margin: 0;
+	padding: 0;
+  height: 10vh;
+}
+
+.Header-List {
+		height: 100%;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.Header-Link {
+    display: block;
+    margin: auto;
+}
+
+.logoTest {
+  background-image: url(../img/oc.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 50px;
+  margin-right: 20px;
 }
