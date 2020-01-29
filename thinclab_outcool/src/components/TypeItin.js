@@ -49,7 +49,7 @@ const TypeItin = () => {
         axios({
             method: 'post',
             url: 'localhost:3000/routes/itineraire',
-            data: body
+            //data: body
         })
         .then(function (response) {
             console.log(response);
