@@ -67,7 +67,7 @@ export default class Agenda extends React.Component {
 
 	componentDidMount() {
 		axios.get(`http://localhost:4000/api/dashboard/mission/:id`)
-			.then((result) => result.data.map(item => items.push(new Object({_id: item.id, name: item.name, startDateTime: new Date(item.start_date), endDateTime: new Date(item.end_date), classes: 'color-3'}))))
+			.then((result) => result.data.map(item => items.push(new Object({ _id: item.id, name: item.name, startDateTime: new Date(item.start_date), endDateTime: new Date(item.end_date), classes: 'color-3' }))))
 		this.setState({ items: items })
 		this.props.missions.find(mission => mission.id === this.props.selected)
 		console.log(items)

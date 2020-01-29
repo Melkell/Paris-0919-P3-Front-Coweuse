@@ -19,7 +19,7 @@
   height: 20%;
 }
 
-.Dashboard-Schedule{
+.Dashboard-Schedule {
   height: 80%;
 }
 
@@ -28,4 +28,71 @@
   padding: 0;
   width: 35%;
   overflow: hidden;
+}
+
+.Action {
+  padding: 0;
+  margin: 0;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+.action-right {
+  margin: 0;
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 60%;
+  background-color: #e8e8e8;
+}
+
+.action-left {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 40%;
+  background-color: #e8e8e8;
+}
+
+.first-line {
+  height: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.one {
+  width: 110px;
+  height: 50px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+  cursor: pointer;
+}
+
+.two {
+  width: 110px;
+  height: 50px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+  cursor: pointer;
+}
+
+.second-line {
+  height: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.square {
+  height: 100%;
+  width: 50px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
+  cursor: pointer;
+}
+
+.info-sup {
+  height: 50vh;
+  background-color: #e8e8e8;
 }
