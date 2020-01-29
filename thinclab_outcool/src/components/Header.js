@@ -17,7 +17,7 @@ const Header = () => {
                         <a className="nav-item nav-link active" href="#">Outcool <span className="sr-only">(current)</span></a>
                         <a className="nav-item nav-link" href="#">Dashboard</a>
                         <a className="nav-item nav-link" href="#">Agenda</a>
-                        <a className="nav-item nav-link " href="#">3truc</a>
+                        <a className="nav-item nav-link " href="#">Déconnexion</a>
                     </div>
                 </div>
             </nav>

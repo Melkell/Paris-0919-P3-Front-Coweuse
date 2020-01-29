@@ -68,8 +68,8 @@ const TypeItin = () => {
                 return (
                     <div>
                         <div className="button-container">
-                            <input className="btn-itin" type="button" value="Add misions" />
-                            <input className="btn-itin" type="button" value="Submit" />
+                            <input className="btn-itin" type="button" value="Ajouter des missions" />
+                            <input className="btn-itin" type="button" value="Envoyer" />
                         </div>
                         <div className="miss-card-container">
                             <div className="miss-card-céréale">
@@ -90,8 +90,8 @@ const TypeItin = () => {
                         <form>
                             <div className="button-container">
                                 <input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" />
-                                <input className="btn-itin" type="button" value="Add misions" />
-                                <input className="btn-itin" type="button" value="Submit" />
+                                <input className="btn-itin" type="button" value="Ajouter une mission" />
+                                <input className="btn-itin" type="button" value="Envoyer" />
                             </div>
                         </form>
                         <div className="miss-card-container">
@@ -130,7 +130,7 @@ const TypeItin = () => {
         <div className="TypeItin">
             <h1 className="TypeItin-Title"> Itinéraire </h1>
             <select className="TypeItin-Select">
-                <option value={null}>Choose a ressource</option>
+                <option value={null}>Choisir une ressource</option>
                 {prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
             </select>
             <div className="">
