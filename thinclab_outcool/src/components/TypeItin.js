@@ -43,9 +43,6 @@ const TypeItin = () => {
     const submitMiss = () => {
         setSlotNumber(document.querySelector('.nb-parce').value)
 
-
-
-
         axios({
             method: 'post',
             url: 'localhost:3000/routes/itineraire',

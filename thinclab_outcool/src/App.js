@@ -3,15 +3,18 @@ import React from 'react'
 
 // Screens & components
 import TypeItin from './components/TypeItin'
-import Header from './components/Header'
 // Styles
 import './App.css'
+import Header from './components/Header'
+import Dashboard from './screens/Dashboard';
+import Admin from './components/Admin';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
       <TypeItin />
+      {/* <Dashboard /> */}
     </div>
   )
 }

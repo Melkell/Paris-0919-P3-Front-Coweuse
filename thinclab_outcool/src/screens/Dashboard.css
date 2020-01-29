@@ -1,0 +1,31 @@
+.Dashboard {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 90vh;
+}
+
+.Left {
+  margin: 0;
+  padding: 0;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Dashboard-Meteo {
+  height: 20%;
+}
+
+.Dashboard-Schedule{
+  height: 80%;
+}
+
+.Dashboard-List {
+  margin: 0;
+  padding: 0;
+  width: 35%;
+  overflow: hidden;
+}
