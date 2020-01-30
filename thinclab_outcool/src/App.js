@@ -12,6 +12,7 @@ import Form from './components/Form';
 import Formconnection from './components/Formconnection';
 import DashboardAdmin from './screens/DashboardAdmin';
 import Footer from './components/Footer';
+import SignUp from './components/SignUp';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route exact path='/dashboardCollab' component={Dashboard}/>
           <Route exact path='/dashboardAdmin' component={DashboardAdmin} />
           <Route exact path='/login' component={Formconnection} />
+          <Route exact path='/signup' component={SignUp} />
           <Route exact path='/form' component={Form} />
           <Route exact path='/itineraire' component={TypeItin} />
         </Switch>
