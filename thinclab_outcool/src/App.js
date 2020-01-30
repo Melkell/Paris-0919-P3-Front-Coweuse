@@ -12,24 +12,25 @@ import Form from './components/Form';
 import Formconnection from './components/Formconnection';
 import DashboardAdmin from './screens/DashboardAdmin';
 import Footer from './components/Footer';
+import PrivateRoute from './helpers/PrivateRoute';
 
 
 const App = () => {
-  return (
+    return (
     <div className="App">
       <Header />
       <Router>
         <Switch>
-          <Route exact path='/dashboardCollab' component={Dashboard}/>
-          <Route exact path='/dashboardAdmin' component={DashboardAdmin} />
           <Route exact path='/login' component={Formconnection} />
-          <Route exact path='/form' component={Form} />
-          <Route exact path='/itineraire' component={TypeItin} />
+          <PrivateRoute exact path='/dashboardCollab' component={Dashboard}/>
+          <PrivateRoute exact path='/dashboardAdmin' component={DashboardAdmin} />
+          <PrivateRoute exact path='/form' component={Form} />
+          <PrivateRoute exact path='/itineraire' component={TypeItin} />
         </Switch>
       </Router>
       
     </div>
-  )
+    )
 }
 
 export default App
