@@ -1,11 +1,12 @@
 .Misslist {
   margin: 0;
   padding: 0;
-  height: 90vh;
+  height: 60vh;
   overflow: auto;
+  background-color: #e8e8e8;
 }
 
-.Misslist {
+.Misslist-admin {
   margin: 0;
   padding: 0;
   height: 50vh;

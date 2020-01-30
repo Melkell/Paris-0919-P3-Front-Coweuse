@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./List.css";
-
 const List = ({ props, getMission, admin }) => {
 	if (admin) {
 		return (
@@ -22,13 +21,16 @@ const List = ({ props, getMission, admin }) => {
 	} else {
 		return (
 			<div className="List" id={props.id} onClick={getMission}>
-				<div>
-					<p className="nameMission">Mission : {props.name}</p>
-				</div>
-				<div>
-					<p className="date">Tache_id : {props.tache_id}</p>
-					<p className="date">id : {props.id}</p>
-					<p className="date">Itineraire_id : {props.itineraire_id}</p>
+				<span className="color-indication" style={{ backgroundColor: 'red' }}></span>
+				<div className="text-container">
+					<div>
+						<p className="nameMission">Mission : {props.name}</p>
+					</div>
+					<div>
+						<p className="date">Tache_id : {props.tache_id}</p>
+						<p className="date">id : {props.id}</p>
+						<p className="date">Itineraire_id : {props.itineraire_id}</p>
+					</div>
 				</div>
 			</div>
 		)

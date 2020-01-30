@@ -16,6 +16,8 @@ const Dashboard = () => {
 	const [itemIndex, setItemIndex] = useState(0);
 	const [userMissions, setUserMissions] = useState([]);
 
+	const admin = false;
+
 	useEffect(() => {
 		axios.get(`http://localhost:4000/api/dashboard/missions`)
 			.then((result) => setItems(result.data))
@@ -39,7 +41,39 @@ const Dashboard = () => {
 				</div>
 			</div>
 			<div className="Dashboard-List">
-				<MissList getMission={getMission} missions={items} />
+				<MissList getMission={getMission} missions={items} admin={admin} />
+				<div className="Filter-List">
+					<div className="Head-filter">
+						<div className="logo"></div>
+						<p>Filter</p>
+					</div>
+					<div className="Body-filter">
+						<div>
+							<label className="switch">
+								<input name="checkbox" type="checkbox" />
+								<span class="slider round"></span>
+							</label>
+						</div>
+						<div>
+							<label className="switch">
+								<input name="checkbox" type="checkbox" />
+								<span class="slider round"></span>
+							</label>
+						</div>
+						<div>
+							<label className="switch">
+								<input name="checkbox" type="checkbox" />
+								<span class="slider round"></span>
+							</label>
+						</div>
+						<div>
+							<label className="switch">
+								<input name="checkbox" type="checkbox" />
+								<span class="slider round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

@@ -52,11 +52,11 @@ const DashboardAdmin = () => {
 				<div className="info-sup">info sup</div>
 				<h3>Liste missions</h3>
 				<label>
-					filter : 
+					filter :
 				<input
-					name="checkbox"
-					type="checkbox"
-				/>
+						name="checkbox"
+						type="checkbox"
+					/>
 				</label>
 				<MissList missions={items} admin={admin} />
 			</div>
