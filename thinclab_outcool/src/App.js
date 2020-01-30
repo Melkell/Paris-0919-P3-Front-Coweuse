@@ -13,6 +13,7 @@ import Formconnection from './components/Formconnection';
 import DashboardAdmin from './screens/DashboardAdmin';
 import Footer from './components/Footer';
 import PrivateRoute from './helpers/PrivateRoute';
+import SignUp from './components/SignUp';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <Header />
       <Router>
         <Switch>
+          <Route exact path='/signup' component={SignUp} />
           <Route exact path='/login' component={Formconnection} />
           <PrivateRoute exact path='/dashboardCollab' component={Dashboard}/>
           <PrivateRoute exact path='/dashboardAdmin' component={DashboardAdmin} />
