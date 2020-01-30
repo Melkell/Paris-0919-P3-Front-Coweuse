@@ -1,8 +1,8 @@
 import React from "react";
 
 import "./List.css";
-
 const List = ({ props, getMission, admin }) => {
+
 	if (admin) {
 		return (
 			<div className="List-admin" id={props.id} onClick={getMission}>
@@ -22,13 +22,16 @@ const List = ({ props, getMission, admin }) => {
 	} else {
 		return (
 			<div className="List" id={props.id} onClick={getMission}>
-				<div>
-					<p className="nameMission">Mission : {props.name}</p>
-				</div>
-				<div>
-					<p className="date">Tache_id : {props.tache_id}</p>
-					<p className="date">id : {props.id}</p>
-					<p className="date">Itineraire_id : {props.itineraire_id}</p>
+				<span className="color-indication" style={{ backgroundColor: props.tache_id % 5 == 0 ? 'yellow' : props.tache_id % 2 == 0 ? 'pink' : 'lightblue'}}></span>
+				<div className="text-container">
+					<div>
+						<p className="nameMission">Mission : {props.name}</p>
+					</div>
+					<div>
+						<p className="date">Tache_id : {props.tache_id}</p>
+						<p className="date">id : {props.id}</p>
+						<p className="date">Itineraire_id : {props.itineraire_id}</p>
+					</div>
 				</div>
 			</div>
 		)
