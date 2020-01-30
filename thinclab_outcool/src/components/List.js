@@ -3,12 +3,6 @@ import React from "react";
 import "./List.css";
 const List = ({ props, getMission, admin }) => {
 
-	const testnum = (val) => {
-		if(val%2 == 0){
-			return true
-		}
-	}
-
 	if (admin) {
 		return (
 			<div className="List-admin" id={props.id} onClick={getMission}>
@@ -28,7 +22,7 @@ const List = ({ props, getMission, admin }) => {
 	} else {
 		return (
 			<div className="List" id={props.id} onClick={getMission}>
-				<span className="color-indication" style={{ backgroundColor: testnum(props.tache_id) ? 'red' : 'blue' }}></span>
+				<span className="color-indication" style={{ backgroundColor: props.tache_id % 5 == 0 ? 'yellow' : props.tache_id % 2 == 0 ? 'pink' : 'lightblue'}}></span>
 				<div className="text-container">
 					<div>
 						<p className="nameMission">Mission : {props.name}</p>
