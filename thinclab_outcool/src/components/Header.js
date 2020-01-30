@@ -18,7 +18,7 @@ const Header = () => {
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Outcool <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Compte</a>
+            <a class="nav-item nav-link" href="#">Dashboard</a>
             <a class="nav-item nav-link" href="#">Déconnexion</a>
           </div>
         </div>

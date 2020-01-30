@@ -2,6 +2,10 @@ img {
 	border: 0px;
 }
 
+.select-status {
+	margin-bottom: 3%;
+}
+
 .form-style-9{
 	max-width: 500px;
 	background: #FAFAFA;

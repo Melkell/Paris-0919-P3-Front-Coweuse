@@ -15,6 +15,11 @@ const Formconnection = () => {
                 <li>
                     <input type="password" name="field3" class="field-style field-full align-none" placeholder="Mot de passe" />
                 </li>
+                <select className="select-status">
+                    <option value="">--Choisir un statut--</option>
+                    <option value="admin">Administrateur</option>
+                    <option value="collab">Collaborateur</option>
+                </select>
                 <li>
                     <input type="submit" value="Connexion" />
                 </li>
