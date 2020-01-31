@@ -179,7 +179,7 @@ var DragDropTouch;
                         e.preventDefault();
                         // show context menu if the user hasn't started dragging after a while
                         setTimeout(function () {
-                            if (_this._dragSource == src && _this._img == null) {
+                            if (_this._dragSource === src && _this._img == null) {
                                 if (_this._dispatchEvent(e, 'contextmenu', src)) {
                                     _this._reset();
                                 }
@@ -211,7 +211,7 @@ var DragDropTouch;
                 if (this._img) {
                     this._lastTouch = e;
                     e.preventDefault(); // prevent scrolling
-                    if (target != this._lastTarget) {
+                    if (target !== this._lastTarget) {
                         this._dispatchEvent(this._lastTouch, 'dragleave', this._lastTarget);
                         this._dispatchEvent(e, 'dragenter', target);
                         this._lastTarget = target;
@@ -276,7 +276,7 @@ var DragDropTouch;
         // get the element at a given touch event
         DragDropTouch.prototype._getTarget = function (e) {
             var pt = this._getPoint(e), el = document.elementFromPoint(pt.x, pt.y);
-            while (el && getComputedStyle(el).pointerEvents == 'none') {
+            while (el && getComputedStyle(el).pointerEvents === 'none') {
                 el = el.parentElement;
             }
             return el;

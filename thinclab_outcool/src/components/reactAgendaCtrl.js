@@ -80,7 +80,7 @@ export default class ReactAgendaCtrl extends Component {
       event.preventDefault();
     }
 
-    if (event.target.name == 'tool1') {
+    if (event.target.name === 'tool1') {
       //this.props.tool(event.target.value)
     }
 
@@ -108,7 +108,7 @@ export default class ReactAgendaCtrl extends Component {
       var array = obj['multiple']
       Object.keys(array).forEach(function (key) {
         var newAr = array[key].filter(function (val, ind) {
-          return array[key].indexOf(val) == ind;
+          return array[key].indexOf(val) === ind;
         })
         var start = newAr[0];
         var endT = newAr[newAr.length - 1] || now;

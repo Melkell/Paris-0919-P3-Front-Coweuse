@@ -7,7 +7,7 @@ const Formconnection = () => {
   return (
     <div>
     <form class="form-style-9">
-      <img src={logo} class="logoForm"/>
+      <img src={logo} class="logoForm" alt="logo"/>
         <ul>
           <li>
             <input type="email" name="field3" class="field-style field-full align-none" placeholder="Adresse mail" />

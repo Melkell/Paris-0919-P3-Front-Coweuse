@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="Header">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="logoTest" href="#"></a>
+        <a class="logoTest" href="#" alt={Logo}></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
