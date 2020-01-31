@@ -10,7 +10,7 @@ const TypeItin = () => {
     // This state will receive all production types
     const [prodType, setProdType] = useState(null)
     const [ressourceType, setRessourceType] = useState(null)
-    const [slotNumber, setSlotNumber] = useState(null)
+    const [setSlotNumber] = useState(null)
 
     // Select handler
     const handleSelect = () => {

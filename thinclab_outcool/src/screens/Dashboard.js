@@ -14,7 +14,7 @@ const Dashboard = () => {
 	const [addMission, setaddMission] = useState(false);
 	const [items, setItems] = useState([]);
 	const [itemIndex, setItemIndex] = useState(0);
-	const [userMissions, setUserMissions] = useState([]);
+	// const [userMissions, setUserMissions] = useState([]);
 
 	const admin = false;
 

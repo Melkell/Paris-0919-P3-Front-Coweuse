@@ -5,7 +5,7 @@ import Axios from 'axios'
 // Styles
 import './Meteo.css'
 
-var imgMeteo = '';
+// var imgMeteo = '';
 
 const Meteo = () => {
 

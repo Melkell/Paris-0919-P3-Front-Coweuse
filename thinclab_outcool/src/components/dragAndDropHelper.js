@@ -1,6 +1,6 @@
 var DragDropTouch;
 (function (DragDropTouch_1) {
-    'use strict';
+    // 'use strict';
     /**
      * Object used to hold the data that is being dragged during drag and drop operations.
      *
@@ -135,7 +135,7 @@ var DragDropTouch;
             this._lastClick = 0;
             // enforce singleton pattern
             if (DragDropTouch._instance) {
-                throw 'DragDropTouch instance already created.';
+                return 'DragDropTouch instance already created.';
             }
             // listen to touch events
             if ('ontouchstart' in document) {
@@ -355,7 +355,7 @@ var DragDropTouch;
             }
             dst.style.pointerEvents = 'none';
             // and repeat for all children
-            for (var i = 0; i < src.children.length; i++) {
+            for (i = 0; i < src.children.length; i++) {
                 this._copyStyle(src.children[i], dst.children[i]);
             }
         };

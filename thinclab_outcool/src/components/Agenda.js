@@ -1,8 +1,9 @@
 import React from 'react'
-import moment from 'moment'
+// import moment from 'moment'
 import ReactAgendaCtrl from './reactAgendaCtrl'
 import ReactAgenda from './reactAgenda'
-import { guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
+// import { guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
+import {Modal} from 'react-agenda';
 
 import axios from 'axios'
 
@@ -162,7 +163,7 @@ export default class Agenda extends React.Component {
 	}
 
 	render() {
-		var AgendaItem = function (props) {
+		const AgendaItem = function (props) {
 			return <div style={{ display: 'block', position: 'absolute', background: '#FFF' }}>{props.item.name} <button onClick={() => props.edit(props.item)}>Edit </button></div>
 		}
 		return (
