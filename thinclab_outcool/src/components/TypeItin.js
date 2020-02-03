@@ -13,7 +13,7 @@ const TypeItin = () => {
 	const [slotNumber, setSlotNumber] = useState([])
 
 	const handleParcellesNum = (e) => {
-		const val = e.target.value
+		const val = Number(e.target.value)
 		slotNumber.push(val)
 		console.log(slotNumber)
 	}
@@ -47,12 +47,11 @@ const TypeItin = () => {
 	}
 
 	const submitMiss = () => {
-		setSlotNumber(document.querySelector('.nb-parce').value)
+		//setSlotNumber(document.querySelector('.nb-parce').value)
 
-		axios({
-			method: 'post',
-			url: 'localhost:3000/routes/itineraire',
-			//data: body
+		axios.post('http://localhost:4000/api/itineraire/add', {
+			nbParcelles: slotNumber,
+			nbTask: 5
 		})
 			.then(function (response) {
 				console.log(response);
@@ -94,7 +93,7 @@ const TypeItin = () => {
 							<div className="button-container">
 								<input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" onChange={handleParcellesNum} />
 								<input className="btn-itin" type="button" value="Ajouter une mission" />
-								<input className="btn-itin" type="button" value="Envoyer" />
+								<input className="btn-itin" type="button" value="Envoyer" onClick={submitMiss} />
 							</div>
 						</form>
 						<div className="miss-card-container">
