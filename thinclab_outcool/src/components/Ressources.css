@@ -61,39 +61,13 @@ h2 {
 .button-add p {
     margin: 0;
     padding: 8px;
+    cursor: pointer;
 
 }
 
 .collab-global {
     width: 100%;
 }
-
-/* .filter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: aliceblue;
-} */
-/* .select-ressources {
-  appearance: none;
-  outline: 0;
-  border: 0 ;
-  background: #F9F9F9;
-  background-image: none;
-  box-shadow: none;
-  font-size: 1.2em;
-  position: relative;
-  width: 150px;
-  height: 45px;
-  overflow: hidden;
-  border-radius: 5px;
-  border: 1px solid #CED4DA;
-  margin: 0;
-  padding-left: 15px;
-  color: #555555;
-  cursor: pointer;
-} */
 
 .filter p {
     margin-top: 0;
