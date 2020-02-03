@@ -1,6 +1,6 @@
 // Librairies
 import React, {useState, useEffect} from 'react';
-import Header from './Header';
+import './Header';
 
 // Styles
 import './Ressources.css'
@@ -40,12 +40,12 @@ const Ressources = () => {
         return (
             array.map(elem => (
                 <tr>
-                    <td className="elem1">{elem.id}</td>
-                    <td className="elem2">{elem.firstname}</td>
-                    <td className="elem3">{elem.lastname}</td>
-                    <td className="elem4">{elem.role}</td>
-                    <td className="elem5">{elem.email}</td>
-                    <td className="elem6">{elem.mission}</td>
+                    <td className="id">{elem.id}</td>
+                    <td className="firstname">{elem.firstname}</td>
+                    <td className="lastname">{elem.lastname}</td>
+                    <td className="role">{elem.role}</td>
+                    <td className="email">{elem.email}</td>
+                    <td className="mission">{elem.mission}</td>
                 </tr>
             ))
         )
@@ -65,7 +65,7 @@ const Ressources = () => {
                     <div className="collab-filter-add">
                         <div className="filter">
                             <p>Trier par :</p>
-                            <select>
+                            <select className="select-ressources">
                                 <option>Noms</option>
                                 <option>Rôles</option>
                                 <option>Missions</option>
@@ -75,9 +75,21 @@ const Ressources = () => {
                             <p>Ajouter un nouvel utilisateur</p>
                         </div>
                     </div>
-                    <div className="list">
+                    <div>
                         <table>
-                            <tbody>{displayList(tab)}</tbody>
+                            <th className="tHead">
+                            <tr>
+                                <td className="thId">Id</td>
+                                <td className="thFirstname">Prénom</td>
+                                <td className="thLastname">Nom</td>
+                                <td className="thRole">Rôle</td>
+                                <td className="thEmail">Email</td>
+                                <td className="thMission">Mission</td>
+                            </tr>
+                            </th>
+                            <tbody>
+                                <td>{displayList(tab)}</td>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -88,7 +100,7 @@ const Ressources = () => {
                     <div className="outils-filter-add">
                         <div className="filter">
                             <p>Trier par :</p>
-                            <select>
+                            <select className="select-ressources">
                                 <option>Noms</option>
                                 <option>Types</option>
                                 <option>Missions</option>
@@ -98,9 +110,21 @@ const Ressources = () => {
                             <p>Ajouter un nouvel outil</p>
                         </div>
                     </div>
-                    <div className="list">
+                    <div>
                         <table>
-                            <tbody>{displayList(tab)}</tbody>
+                        <th className="tHead">
+                            <tr>
+                                <td className="thId">Id</td>
+                                <td className="thFirstname">Prénom</td>
+                                <td className="thLastname">Nom</td>
+                                <td className="thRole">Rôle</td>
+                                <td className="thEmail">Email</td>
+                                <td className="thMission">Mission</td>
+                            </tr>
+                        </th>
+                            <tbody>
+                                <td>{displayList(tab)}</td>
+                            </tbody>
                         </table>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ h2 {
     text-align: center;
     padding: 5%;
     margin: 0;
-    background-color: #8DE23E;
+    background-color: #00B74D;
     color: aliceblue;
 }
 
@@ -74,96 +74,77 @@ h2 {
     align-items: center;
     color: aliceblue;
 }
-select{
-    appearance: none;
+.select-ressources {
+  appearance: none;
   outline: 0;
   border: 0 ;
   background: #F9F9F9;
   background-image: none;
   box-shadow: none;
   font-size: 1.2em;
-}
-
-select{
-    position: relative;
+  position: relative;
   width: 150px;
   height: 45px;
   overflow: hidden;
   border-radius: 5px;
   border: 1px solid #CED4DA;
-}
-
-select{
-   
   margin: 0;
   padding-left: 15px;
   color: #555555;
   cursor: pointer;
 }
 
-
 .filter p {
     margin-top: 0;
 }
 
-.list {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 2% 0 2% 3%;
-    
-
-}
-
 table {
-    width: 100%;
-    border:solid;
-    border-color: #00B74D;
-    border-radius:  5px 10px 0 5px;
-}
+    border-collapse: collapse;
+    width: 55%;
+    margin: 80px;
+    margin-left: 90px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
 
-td {
-    padding: 2% 0 2% 0;
-    border: solid;
-    border-color: #8DE23E;
-    border-radius: 5px 10px 0 5px;
-}
+  td {
+      padding: 15px;
+  }
+  
+  tr:nth-child(even){
+      background-color: #f2f2f2;
+      padding: 15px;
+    }
+  
+  th {
+    background-color: #00B74D;
+    color: white;
+  }
 
-.elem1 {
-    width: 5%;
-    border-right: #2cff3d;
-}
+  .thId, .thFirstname, .thLastname, .thRole, .thEmail, .thMission {
+    margin: 20px;
+  }
 
-.elem2 {
-    width: 15%;
-}
+  .thEmail {
+    margin: 30px;
+    padding-left: 85px;
+  }
 
-.elem3 {
-    width: 15%;
-}
+  .thMission {
+      padding-left: 60px;
+  }
 
-.elem4 {
-    width: 20%;
-}
-
-.elem5 {
-    width: 20%;
-}
-
-.elem6 {
-    width: 5%;
-}
-
-
-
-
-/* .vignette {
-    /* display: grid;
+.vignette {
+     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 0px; */
-    /* display: flex;
+    grid-row-gap: 0px; 
+    display: flex;
     justify-content: space-evenly;
     font-size: 15px;
     width: 100%;
-} */ 
+} 
