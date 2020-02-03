@@ -66,9 +66,10 @@ const Ressources = () => {
                         <div className="filter">
                             <p>Trier par :</p>
                             <select className="select-ressources">
-                                <option>Noms</option>
-                                <option>Rôles</option>
-                                <option>Missions</option>
+                                <option value="">--Choisir une option--</option>
+                                <option value="noms">Noms</option>
+                                <option value="roles">Rôles</option>
+                                <option value="missions">Missions</option>
                             </select>
                         </div>
                         <div className="button-add">
@@ -101,9 +102,10 @@ const Ressources = () => {
                         <div className="filter">
                             <p>Trier par :</p>
                             <select className="select-ressources">
-                                <option>Noms</option>
-                                <option>Types</option>
-                                <option>Missions</option>
+                                <option value="">--Choisir une option--</option>
+                                <option value="noms">Noms</option>
+                                <option value="roles">Rôles</option>
+                                <option value="missions">Missions</option>
                             </select>
                         </div>
                         <div className="button-add">

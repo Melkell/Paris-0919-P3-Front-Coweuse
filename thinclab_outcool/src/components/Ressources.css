@@ -60,6 +60,7 @@ h2 {
 
 .button-add p {
     margin: 0;
+    padding: 8px;
 
 }
 
@@ -67,14 +68,14 @@ h2 {
     width: 100%;
 }
 
-.filter {
+/* .filter {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: aliceblue;
-}
-.select-ressources {
+} */
+/* .select-ressources {
   appearance: none;
   outline: 0;
   border: 0 ;
@@ -92,7 +93,7 @@ h2 {
   padding-left: 15px;
   color: #555555;
   cursor: pointer;
-}
+} */
 
 .filter p {
     margin-top: 0;
