@@ -1,6 +1,6 @@
 // // Librairies
 import React from 'react'
-import '../Logo/logo.jpg'
+import Logo from '../Logo/logo.jpg'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="Header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="logoTest" href="/"></a>
+        <a className="logoTest" href="/" alt={Logo}/>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
