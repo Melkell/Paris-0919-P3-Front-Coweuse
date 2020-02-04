@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import './Formconnection.css'
 import logo from '../img/oc.png'

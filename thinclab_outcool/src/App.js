@@ -12,7 +12,6 @@ import Dashboard from './screens/Dashboard';
 import Form from './components/Form';
 import Formconnection from './components/Formconnection';
 import DashboardAdmin from './screens/DashboardAdmin';
-import Footer from './components/Footer';
 import SignUp from './components/SignUp';
 
 

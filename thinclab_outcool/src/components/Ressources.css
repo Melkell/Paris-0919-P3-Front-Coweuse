@@ -29,25 +29,27 @@ h2 {
     border-left: 1px solid aliceblue;
 }
 
-.collab-filter-add {
+.collab-filter-add, .outils-filter-add{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
     padding: 0 0 5% 0;
     background-color: aliceblue;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
 }
 
-.outils-filter-add {
+/* .outils-filter-add {
     display: flex;
     justify-content: space-around;
     padding: 0 0 5% 0;
     background-color: aliceblue;
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
-}
+} */
 
-.button-add {
+/* .button-add {
     background-color: aliceblue;
     margin: 0;
     padding: 2% 2% 2% 2%;
@@ -56,21 +58,38 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.button-add button {
+    /* box-shadow: inset 0px 0px 0px 0px rgb 0000; */
+	background-color: #00B74D;
+	display: flex;
+	cursor: pointer;
+	color: #FFFFFF;
+    padding: 8px 18px;
+    margin-top: 20px;
+    margin-left: 40px;
+	text-decoration: none;
+	font: 14px Arial, Helvetica, sans-serif;
+    border-radius: 5px;
 }
 
-.button-add p {
-    margin: 0;
-    padding: 8px;
-    cursor: pointer;
-
+.button-add button:hover {
+    background-color: rgb(59, 197, 8);
+	border-radius: 5px;
 }
+
 
 .collab-global {
     width: 100%;
 }
 
-.filter p {
-    margin-top: 0;
+.filter select {
+    margin-top: 20px;
+}
+
+.filter span {
+    margin-right: 10px;
 }
 
 table {
@@ -123,3 +142,4 @@ table {
     font-size: 15px;
     width: 100%;
 } 
+
