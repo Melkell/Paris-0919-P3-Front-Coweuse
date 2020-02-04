@@ -50,6 +50,9 @@
 }
 
 .action-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 0;
   margin-left: 10px;
   margin-right: 5px;
@@ -57,24 +60,17 @@
   background-color: #e8e8e8;
 }
 
-.first-line {
-  height: 50%;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .one {
-  width: 110px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
   cursor: pointer;
 }
 
 .two {
-  width: 110px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
   cursor: pointer;
@@ -96,8 +92,17 @@
 }
 
 .info-sup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50vh;
   background-color: #e8e8e8;
+}
+
+.graph {
+  height: 95%;
+  width: 95%;
+  background-color: white;
 }
 
 .Filter-List {
