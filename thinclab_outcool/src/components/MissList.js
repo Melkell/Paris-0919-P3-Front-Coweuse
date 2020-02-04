@@ -5,7 +5,7 @@ import List from "./List.js"
 import './MissList.css'
 
 const MissList = ({ getMission, missions, admin, filter }) => {
-	if (filter.length > 0) {
+	if (filter && filter.length > 0) {
 		for (const element of filter) {
 			return (
 				<div className={admin ? "Misslist-admin" : "Misslist"}>
