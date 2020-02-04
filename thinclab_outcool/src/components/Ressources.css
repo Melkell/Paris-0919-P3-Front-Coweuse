@@ -41,7 +41,6 @@ h2 {
 }
 
 .button-add button {
-    /* box-shadow: inset 0px 0px 0px 0px rgb 0000; */
 	background-color: #00B74D;
 	display: flex;
 	cursor: pointer;
@@ -112,7 +111,7 @@ table {
   }
 
 .vignette {
-     display: grid;
+    display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
