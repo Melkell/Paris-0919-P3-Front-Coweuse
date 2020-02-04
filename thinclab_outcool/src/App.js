@@ -1,6 +1,7 @@
 // Librairies
 import React from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import Ressources from './components/Ressources'
 
 // Screens & components
 import TypeItin from './components/TypeItin'
@@ -11,7 +12,6 @@ import Dashboard from './screens/Dashboard';
 import Form from './components/Form';
 import Formconnection from './components/Formconnection';
 import DashboardAdmin from './screens/DashboardAdmin';
-import Footer from './components/Footer';
 import SignUp from './components/SignUp';
 
 
@@ -27,9 +27,9 @@ const App = () => {
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/form' component={Form} />
           <Route exact path='/itineraire' component={TypeItin} />
+          <Route exact path='/ressourcesAdmin' component={Ressources} />
         </Switch>
       </Router>
-      
     </div>
   )
 }
