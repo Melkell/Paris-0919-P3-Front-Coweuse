@@ -108,6 +108,7 @@
 
 .Head-filter {
   display: flex;
+  align-items: center;
   margin: 10px;
   background-color: white;
   font-size: 1.5em;
@@ -130,11 +131,19 @@
   background-color: #98d425;
 }
 
+h3 {
+  color: black;
+  margin-left: 10px;
+}
+
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 /* Hide default HTML checkbox */
@@ -157,6 +166,21 @@
   transition: 0.4s;
 }
 
+.yellow {
+  background-color: yellow;
+  opacity: 0.5;
+}
+
+.pink {
+  background-color: pink;
+  opacity: 0.5;
+}
+
+.blue {
+  background-color: lightblue;
+  opacity: 0.5;
+}
+
 .slider:before {
   position: absolute;
   content: "";
@@ -170,7 +194,7 @@
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  opacity: 1;
 }
 
 input:focus + .slider {

@@ -11,6 +11,7 @@ import Meteo from '../components/Meteo'
 import './Dashboard.css'
 
 const Dashboard = () => {
+	const [filterMission, setFilterMission] = useState([])
 	const [addMission, setaddMission] = useState(false);
 	const [items, setItems] = useState([]);
 	const [itemIndex, setItemIndex] = useState(0);
@@ -30,6 +31,15 @@ const Dashboard = () => {
 		setaddMission(!addMission)
 	}
 
+	const addFilter = (e) => {
+		const val = Number(e.target.id)
+		if (filterMission.includes(val)) {
+			console.log("doublon")
+		} else {
+			setFilterMission(filterMission => [...filterMission, val]);
+		}
+	}
+
 	return (
 		<div className="Dashboard">
 			<div className="Left">
@@ -41,29 +51,31 @@ const Dashboard = () => {
 				</div>
 			</div>
 			<div className="Dashboard-List">
-				<MissList getMission={getMission} missions={items} admin={admin} />
+				<MissList getMission={getMission} missions={items} admin={admin} filter={filterMission} />
 				<div className="Filter-List">
 					<div className="Head-filter">
-						<div className="logo"></div>
-						<p></p>
+						<div className="logo">
+							<span className="config"></span>
+						</div>
+						<h3>Filter</h3>
 					</div>
 					<div className="Body-filter">
 						<div>
 							<label className="switch">
 								<input name="checkbox" type="checkbox" />
-								<span class="slider round"></span>
+								<span class="slider round yellow" id="5" onClick={addFilter}></span>
 							</label>
 						</div>
 						<div>
 							<label className="switch">
 								<input name="checkbox" type="checkbox" />
-								<span class="slider round"></span>
+								<span class="slider round pink" id="2" onClick={addFilter}></span>
 							</label>
 						</div>
 						<div>
 							<label className="switch">
 								<input name="checkbox" type="checkbox" />
-								<span class="slider round"></span>
+								<span class="slider round blue" id="1" onClick={addFilter}></span>
 							</label>
 						</div>
 					</div>

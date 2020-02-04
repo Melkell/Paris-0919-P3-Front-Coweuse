@@ -4,7 +4,6 @@ import axios from 'axios'
 // Styles
 import './TypeItin.css'
 
-
 const TypeItin = () => {
 
 	// This state will receive all production types

@@ -89,15 +89,15 @@ export default class ReactAgendaItem extends Component {
 			<div className="agenda-controls-item" style={this.state.controls}>
 				{this.props.edit ?
 					<div className="agenda-edit-event">
-						<a onClick={() => this.props.edit(this.props.item)} className="agenda-edit-modele">
+						{/*<a onClick={() => this.props.edit(this.props.item)} className="agenda-edit-modele">
 							<i className="edit-item-icon"></i>
-						</a>
+				</a>*/}
 					</div> : ''}
 				{this.props.remove ?
 					<div className="agenda-delete-event">
-						<a onClick={() => this.props.remove(this.props.item)} className="agenda-delete-modele">
+						{/*<a onClick={() => this.props.remove(this.props.item)} className="agenda-delete-modele">
 							<i className="remove-item-icon"></i>
-						</a>
+				</a>*/}
 					</div> : ''}
 			</div>
 
