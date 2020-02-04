@@ -45,15 +45,9 @@ const Dashboard = () => {
 				<div className="Filter-List">
 					<div className="Head-filter">
 						<div className="logo"></div>
-						<p>Filter</p>
+						<p></p>
 					</div>
 					<div className="Body-filter">
-						<div>
-							<label className="switch">
-								<input name="checkbox" type="checkbox" />
-								<span class="slider round"></span>
-							</label>
-						</div>
 						<div>
 							<label className="switch">
 								<input name="checkbox" type="checkbox" />
