@@ -71,43 +71,40 @@ h2 {
     margin-right: 10px;
 }
 
-table {
+.tableRessources {
     border-collapse: collapse;
     width: 55%;
     margin: 80px;
     margin-left: 90px;
   }
   
-  th, td {
+.tBody {
+    width:75%;
     text-align: left;
-    padding: 8px;
-  }
-
-  td {
-      padding: 15px;
+    padding: 12px;
   }
   
-  tr:nth-child(even){
-      background-color: #f2f2f2;
+.tableElements:nth-child(even){
+      background-color: rgb(212, 210, 210);
       padding: 15px;
     }
   
-  th {
+.tHead {
     background-color: #00B74D;
     color: white;
   }
 
   .thId, .thFirstname, .thLastname, .thRole, .thEmail, .thMission {
-    margin: 20px;
+    margin: 5px;
+    padding: 15px;
   }
 
   .thEmail {
-    margin: 30px;
-    padding-left: 85px;
+    padding-left: 65px;
   }
 
   .thMission {
-      padding-left: 60px;
+      padding-left: 55px;
   }
 
 .vignette {

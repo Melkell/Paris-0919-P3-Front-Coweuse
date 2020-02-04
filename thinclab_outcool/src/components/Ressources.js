@@ -37,13 +37,13 @@ const Ressources = () => {
 
   const displayList = array => {
     return array.map(elem => (
-      <tr>
-        <td className="id">{elem.id}</td>
-        <td className="firstname">{elem.firstname}</td>
-        <td className="lastname">{elem.lastname}</td>
-        <td className="role">{elem.role}</td>
-        <td className="email">{elem.email}</td>
-        <td className="mission">{elem.mission}</td>
+      <tr className="tableElements">
+        <td className="tBody">{elem.id}</td>
+        <td className="tBody">{elem.firstname}</td>
+        <td className="tBody">{elem.lastname}</td>
+        <td className="tBody">{elem.role}</td>
+        <td className="tBody">{elem.email}</td>
+        <td className="tBody">{elem.mission}</td>
       </tr>
     ));
   };
@@ -74,10 +74,10 @@ const Ressources = () => {
             </div>
           </div>
           <div>
-            <table>
+            <table className="tableRessources">
               <th className="tHead">
-                <tr>
-                  <td className="thId">Id</td>
+                <tr className="tableElements">
+                  <td className=" thId">Id</td>
                   <td className="thFirstname">Prénom</td>
                   <td className="thLastname">Nom</td>
                   <td className="thRole">Rôle</td>
@@ -86,7 +86,7 @@ const Ressources = () => {
                 </tr>
               </th>
               <tbody>
-                <td>{displayList(tab)}</td>
+                <td className="tBody">{displayList(tab)}</td>
               </tbody>
             </table>
           </div>
@@ -110,9 +110,9 @@ const Ressources = () => {
             </div>
           </div>
           <div>
-            <table>
+            <table className="tableRessources">
               <th className="tHead">
-                <tr>
+                <tr className="tableElements">
                   <td className="thId">Id</td>
                   <td className="thFirstname">Prénom</td>
                   <td className="thLastname">Nom</td>
@@ -122,7 +122,7 @@ const Ressources = () => {
                 </tr>
               </th>
               <tbody>
-                <td>{displayList(tab)}</td>
+                <td className="tBody">{displayList(tab)}</td>
               </tbody>
             </table>
           </div>
