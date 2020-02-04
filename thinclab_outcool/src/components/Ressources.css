@@ -67,7 +67,7 @@ h2 {
 	cursor: pointer;
 	color: #FFFFFF;
     padding: 8px 18px;
-    margin-top: 20px;
+    margin-top: 35px;
     margin-left: 40px;
 	text-decoration: none;
 	font: 14px Arial, Helvetica, sans-serif;
@@ -85,7 +85,7 @@ h2 {
 }
 
 .filter select {
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 .filter span {
