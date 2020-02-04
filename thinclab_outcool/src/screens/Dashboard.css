@@ -83,14 +83,6 @@
   justify-content: space-between;
 }
 
-.square {
-  height: 100%;
-  width: 50px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
-  cursor: pointer;
-}
-
 .info-sup {
   display: flex;
   justify-content: center;
@@ -219,4 +211,18 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.Dashboard-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75vh;
+  width: 75vw;
+  margin: 0;
+  padding: 0;
+  background-color:#e8e8e8;
+  position: fixed;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.4);
 }

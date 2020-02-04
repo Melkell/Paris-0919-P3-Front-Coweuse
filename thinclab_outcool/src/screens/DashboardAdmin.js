@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import Agenda from '../components/Agenda'
 import MissList from '../components/MissList'
-import Meteo from '../components/Meteo'
+import TypeItin from '../components/TypeItin'
 
 import './Dashboard.css'
 
@@ -12,6 +12,7 @@ const DashboardAdmin = () => {
 	const [items, setItems] = useState([]);
 	const [itemIndex, setItemIndex] = useState(0);
 	const [filter, setFilter] = useState(false);
+	const [modalItineraire, setModalItineraire] = useState(false)
 
 	const admin = true;
 
@@ -20,8 +21,8 @@ const DashboardAdmin = () => {
 			.then((result) => setItems(result.data))
 	})
 
-	const activeFilter = () => {
-		setFilter(!filter);
+	const showItineraire = () => {
+		setModalItineraire(!modalItineraire);
 	}
 
 	/*const getMission = (e) => {
@@ -35,7 +36,7 @@ const DashboardAdmin = () => {
 			<div className="Left">
 				<div className="Action">
 					<div className="action-left">
-						<div className="one">Ajout Mission</div>
+						<div className="one" onClick={showItineraire}>Ajout Mission</div>
 						<div className="two">Ressources</div>
 					</div>
 					<div className="action-right"></div>
@@ -53,6 +54,9 @@ const DashboardAdmin = () => {
 				<h3>Liste missions</h3>
 				<MissList missions={items} admin={admin} />
 			</div>
+			{modalItineraire ? <div className="Dashboard-modal" clickOutside={showItineraire}>
+				<TypeItin />
+			</div> : ''}
 		</div >
 	)
 }
