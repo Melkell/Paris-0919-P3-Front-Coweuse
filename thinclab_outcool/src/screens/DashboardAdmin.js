@@ -56,7 +56,7 @@ const DashboardAdmin = () => {
 			</div>
 			{modalItineraire ? <div className="Dashboard-modal" clickOutside={showItineraire}>
 				<span className="quit" onClick={showItineraire}>X</span>
-				<TypeItin />
+				<TypeItin quitModal={showItineraire}/>
 			</div> : ''}
 		</div >
 	)
