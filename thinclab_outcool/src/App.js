@@ -9,7 +9,6 @@ import TypeItin from './components/TypeItin'
 import './App.css'
 import Header from './components/Header'
 import Dashboard from './screens/Dashboard';
-import Form from './components/Form';
 import Formconnection from './components/Formconnection';
 import DashboardAdmin from './screens/DashboardAdmin';
 import SignUp from './components/SignUp';
@@ -25,7 +24,6 @@ const App = () => {
           <Route exact path='/dashboardAdmin' component={DashboardAdmin} />
           <Route exact path='/login' component={Formconnection} />
           <Route exact path='/signup' component={SignUp} />
-          <Route exact path='/form' component={Form} />
           <Route exact path='/itineraire' component={TypeItin} />
           <Route exact path='/ressourcesAdmin' component={Ressources} />
         </Switch>
