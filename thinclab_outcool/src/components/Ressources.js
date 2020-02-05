@@ -4,6 +4,8 @@ import "./Header";
 
 // Styles
 import "./Ressources.css";
+import FormOutils from './FormOutils';
+import FormCollab from './FormCollab';
 
 const tab = [
   {
@@ -34,6 +36,8 @@ const tab = [
 
 const Ressources = () => {
   const [person, setPerson] = useState("");
+  const [modalAddCollab, setModalAddCollab] = useState(false);
+  const [modalAddTool, setModalAddTool] = useState(false);
 
   const displayList = array => {
     return array.map(elem => (
@@ -46,6 +50,14 @@ const Ressources = () => {
         <td className="tBody">{elem.mission}</td>
       </tr>
     ));
+  };
+
+  const addCollab = () => {
+    setModalAddCollab(!modalAddCollab);
+  };
+
+  const addTool = () => {
+    setModalAddTool(!modalAddTool);
   };
 
   // useEffect(() => {
@@ -70,7 +82,7 @@ const Ressources = () => {
               </select>
             </div>
             <div className="button-add">
-              <button>Ajouter un nouvel utilisateur</button>
+              <button onClick={addCollab}>Ajouter un nouvel utilisateur</button>
             </div>
           </div>
           <div>
@@ -90,6 +102,13 @@ const Ressources = () => {
               </tbody>
             </table>
           </div>
+          {modalAddCollab ? (
+            <div className="add-modal" clickOutside={addCollab}>
+              <FormCollab />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <div className="ressources-outils">
@@ -106,7 +125,7 @@ const Ressources = () => {
               </select>
             </div>
             <div className="button-add">
-              <button>Ajouter un nouvel outil</button>
+              <button onClick={addTool}>Ajouter un nouvel outil</button>
             </div>
           </div>
           <div>
@@ -126,6 +145,13 @@ const Ressources = () => {
               </tbody>
             </table>
           </div>
+          {modalAddTool ? (
+            <div className="add-modal" clickOutside={addTool}>
+              <FormOutils />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
