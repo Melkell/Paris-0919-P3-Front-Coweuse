@@ -1,3 +1,4 @@
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -122,4 +123,27 @@ h2 {
   justify-content: space-evenly;
   font-size: 15px;
   width: 100%;
+}
+
+.add-modal {
+  border: solid 1px white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60vh;
+  width: 60vw;
+  margin: auto;
+  background-color:#e8e8e8;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 125px 85px rgba(83, 83, 83, 0.75);
+}
+
+.add-modal p {
+  text-align: center;
 }
