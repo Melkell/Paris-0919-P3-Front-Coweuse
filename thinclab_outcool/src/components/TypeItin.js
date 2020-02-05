@@ -4,7 +4,7 @@ import axios from 'axios'
 // Styles
 import './TypeItin.css'
 
-const TypeItin = () => {
+const TypeItin = (props) => {
 
 	// This state will receive all production types
 	const [prodType, setProdType] = useState(null)
@@ -58,6 +58,7 @@ const TypeItin = () => {
 			.catch(function (error) {
 				console.log(error);
 			});
+			props.quitModal()
 		// Pouf pouf requête POST blabla on a fini
 	}
 
@@ -69,7 +70,6 @@ const TypeItin = () => {
 				return (
 					<div>
 						<div className="button-container">
-							<input className="btn-itin" type="button" value="Ajouter des missions" />
 							<input className="btn-itin" type="button" value="Envoyer" />
 						</div>
 						<div className="miss-card-container">
@@ -91,7 +91,6 @@ const TypeItin = () => {
 						<form>
 							<div className="button-container">
 								<input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" onChange={handleParcellesNum} />
-								<input className="btn-itin" type="button" value="Ajouter une mission" />
 								<input className="btn-itin" type="button" value="Envoyer" onClick={submitMiss} />
 							</div>
 						</form>
