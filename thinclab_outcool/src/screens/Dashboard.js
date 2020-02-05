@@ -1,5 +1,5 @@
 // Librairies
-import React, { useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 import axios from 'axios'
 
@@ -11,6 +11,7 @@ import Meteo from '../components/Meteo'
 import './Dashboard.css'
 
 const Dashboard = () => {
+
 	const [filterMission, setFilterMission] = useState([])
 	const [addMission, setaddMission] = useState(false);
 	const [items, setItems] = useState([]);
@@ -18,12 +19,17 @@ const Dashboard = () => {
 	const [userMissions, setUserMissions] = useState([]);
 
 	const admin = false;
+	const didMountRef = useRef(true)
 
 	useEffect(() => {
-		axios.get(`http://localhost:4000/api/dashboard/missions`)
-			.then((result) => setItems(result.data))
+		if (didMountRef.current) {
+			axios.get(`http://localhost:4000/api/dashboard/missions`)
+				.then((result) => setItems(result.data))
+			didMountRef.current = false
+		} else {
+			didMountRef.current = true
+		}
 	})
-
 
 	const getMission = (e) => {
 		const selected = Number(e.target.id)
@@ -31,10 +37,16 @@ const Dashboard = () => {
 		setaddMission(!addMission)
 	}
 
+	const delMission = () => {
+		console.log("del mission")
+		console.log(itemIndex)
+		setItems(items.splice(itemIndex,1))
+	}
+
 	const addFilter = (e) => {
 		const val = Number(e.target.id)
 		if (filterMission.includes(val)) {
-			console.log("doublon")
+			//doublon
 		} else {
 			setFilterMission(filterMission => [...filterMission, val]);
 		}
@@ -47,7 +59,7 @@ const Dashboard = () => {
 					<Meteo />
 				</div>
 				<div className="Dashboard-Schedule">
-					<Agenda addMission={addMission} missions={items} selected={itemIndex} />
+					<Agenda addMission={addMission} delMission={delMission} missions={items} selected={itemIndex} />
 				</div>
 			</div>
 			<div className="Dashboard-List">
