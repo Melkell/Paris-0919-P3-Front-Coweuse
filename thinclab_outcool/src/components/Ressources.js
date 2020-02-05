@@ -39,19 +39,6 @@ const Ressources = () => {
   const [modalAddCollab, setModalAddCollab] = useState(false);
   const [modalAddTool, setModalAddTool] = useState(false);
 
-  const displayList = array => {
-    return array.map(elem => (
-      <tr className="tableElements">
-        <td className="tBody">{elem.id}</td>
-        <td className="tBody">{elem.firstname}</td>
-        <td className="tBody">{elem.lastname}</td>
-        <td className="tBody">{elem.role}</td>
-        <td className="tBody">{elem.email}</td>
-        <td className="tBody">{elem.mission}</td>
-      </tr>
-    ));
-  };
-
   const addCollab = () => {
     setModalAddCollab(!modalAddCollab);
   };
@@ -69,7 +56,7 @@ const Ressources = () => {
   return (
     <div className="ressources-global">
       <div className="ressources-collab">
-        <h2>LISTE DES COLLABORATEURS</h2>
+        <div className="theme">LISTE DES COLLABORATEURS</div>
         <div className="collab-global">
           <div className="collab-filter-add">
             <div className="filter">
@@ -82,37 +69,22 @@ const Ressources = () => {
               </select>
             </div>
             <div className="button-add">
-              <button onClick={addCollab}>Ajouter un nouvel utilisateur</button>
+              <button onClick={addCollab}>Ajouter</button>
             </div>
           </div>
           <div>
-            <table className="tableRessources">
-              <th className="tHead">
-                <tr className="tableElements">
-                  <td className=" thId">Id</td>
-                  <td className="thFirstname">Prénom</td>
-                  <td className="thLastname">Nom</td>
-                  <td className="thRole">Rôle</td>
-                  <td className="thEmail">Email</td>
-                  <td className="thMission">Mission</td>
-                </tr>
-              </th>
-              <tbody>
-                <td className="tBody">{displayList(tab)}</td>
-              </tbody>
-            </table>
           </div>
           {modalAddCollab ? (
             <div className="add-modal" clickOutside={addCollab}>
               <FormCollab />
             </div>
           ) : (
-            ""
-          )}
+              ""
+            )}
         </div>
       </div>
       <div className="ressources-outils">
-        <h2>LISTE DES OUTILS</h2>
+        <div className="theme">LISTE DES OUTILS</div>
         <div className="outils-global">
           <div className="outils-filter-add">
             <div className="filter">
@@ -125,33 +97,16 @@ const Ressources = () => {
               </select>
             </div>
             <div className="button-add">
-              <button onClick={addTool}>Ajouter un nouvel outil</button>
+              <button onClick={addTool}>Ajouter</button>
             </div>
-          </div>
-          <div>
-            <table className="tableRessources">
-              <th className="tHead">
-                <tr className="tableElements">
-                  <td className="thId">Id</td>
-                  <td className="thFirstname">Prénom</td>
-                  <td className="thLastname">Nom</td>
-                  <td className="thRole">Rôle</td>
-                  <td className="thEmail">Email</td>
-                  <td className="thMission">Mission</td>
-                </tr>
-              </th>
-              <tbody>
-                <td className="tBody">{displayList(tab)}</td>
-              </tbody>
-            </table>
           </div>
           {modalAddTool ? (
             <div className="add-modal" clickOutside={addTool}>
               <FormOutils />
             </div>
           ) : (
-            ""
-          )}
+              ""
+            )}
         </div>
       </div>
     </div>
