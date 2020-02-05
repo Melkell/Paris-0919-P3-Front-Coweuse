@@ -61,19 +61,33 @@
 }
 
 .one {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: 100px;
   height: 100px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
   cursor: pointer;
+  background-image: url(../img/add.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
 }
 
 .two {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: 100px;
   height: 100px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
   cursor: pointer;
+  background-image: url(../img/settings.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
 }
 
 .second-line {
@@ -92,6 +106,8 @@
 }
 
 .graph {
+  display: flex;
+  justify-content: center;
   height: 95%;
   width: 95%;
   background-color: white;
