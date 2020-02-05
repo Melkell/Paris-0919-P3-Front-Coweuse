@@ -55,6 +55,7 @@ const DashboardAdmin = () => {
 				<MissList missions={items} admin={admin} />
 			</div>
 			{modalItineraire ? <div className="Dashboard-modal" clickOutside={showItineraire}>
+				<span className="quit" onClick={showItineraire}>X</span>
 				<TypeItin />
 			</div> : ''}
 		</div >
