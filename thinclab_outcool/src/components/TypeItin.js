@@ -41,7 +41,6 @@ const TypeItin = (props) => {
 				default:
 					setRessourceType(null)
 			}
-
 		})
 	}
 
@@ -58,7 +57,7 @@ const TypeItin = (props) => {
 			.catch(function (error) {
 				console.log(error);
 			});
-			props.quitModal()
+		props.quitModal()
 		// Pouf pouf requête POST blabla on a fini
 	}
 
