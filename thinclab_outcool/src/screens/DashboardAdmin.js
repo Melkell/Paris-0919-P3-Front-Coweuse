@@ -22,6 +22,7 @@ const DashboardAdmin = () => {
 
 	const renderProgress = progress => <strong>{progress}%</strong>;
 
+
 	const admin = true;
 
 	useEffect(() => {
@@ -49,6 +50,7 @@ const DashboardAdmin = () => {
 			<div className="Left">
 				<div className="Action">
 					<div className="action-left">
+
 						<div className="one" onClick={showItineraire}>
 							<p>créer missions</p>
 						</div>
@@ -80,6 +82,9 @@ const DashboardAdmin = () => {
 			{modalRessources ? <div className="Dashboard-modal">
 				<span className="quit" onClick={showRessources}>X</span>
 				<Ressources quitModal={showRessources} />
+			</div> : ''}
+			{modalRessources ? <div className="ressources-modal" clickOutside={showRessources}>
+			 <Ressources />
 			</div> : ''}
 		</div >
 	)
