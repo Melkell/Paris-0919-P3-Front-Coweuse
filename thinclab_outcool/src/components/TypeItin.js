@@ -58,6 +58,7 @@ const TypeItin = (props) => {
 				console.log(error);
 			});
 		props.quitModal()
+		props.refresh()
 		// Pouf pouf requête POST blabla on a fini
 	}
 

@@ -209,7 +209,7 @@ export default class Agenda extends React.Component {
 				{
 					this.state.showModal ? <Modal clickOutside={this._closeModal} >
 						<div className="modal-content">
-							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} new={this.props.missions.find(mission => mission.id === this.props.selected)} />
+							<ReactAgendaCtrl items={this.state.items} itemColors={colors} selectedCells={this.state.selected} Addnew={this.addNewEvent} edit={this.editEvent} new={this.props.missions.find(mission => mission.id === this.props.selected)} delMission={this.props.delMission}/>
 						</div>
 					</Modal> : ''
 				}

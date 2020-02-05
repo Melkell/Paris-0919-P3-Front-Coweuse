@@ -11,8 +11,8 @@ import axios from 'axios'
 var now = new Date();
 
 export default class ReactAgendaCtrl extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       editMode: false,
       showCtrl: false,
@@ -162,6 +162,7 @@ export default class ReactAgendaCtrl extends Component {
     axios.put('http://localhost:4000/api/dashboard/missionsUser', newObj)
       //.then((result) => console.log(result.data))
     this.dispatchEvent(newObj);
+    this.props.delMission()
   }
 
   updateEvent(e) {
