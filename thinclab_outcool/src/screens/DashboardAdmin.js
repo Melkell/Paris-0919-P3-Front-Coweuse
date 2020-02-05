@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { render } from 'react-dom';
 
-import Donut from 'react-svg-donuts';
+import Donut from '../components/Donut';
 
 import axios from 'axios'
 
@@ -11,7 +11,6 @@ import TypeItin from '../components/TypeItin'
 import Ressources from '../components/Ressources'
 
 import './Dashboard.css'
-import 'react-svg-donuts/dist/index.css';
 
 const DashboardAdmin = () => {
 	const [items, setItems] = useState([]);
@@ -66,6 +65,7 @@ const DashboardAdmin = () => {
 			<div className="Dashboard-List">
 				<div className="info-sup">
 					<div className="graph">
+						<h3>Missions planifiées</h3>
 						<Donut progress={progress} onRender={renderProgress} />
 					</div>
 				</div>

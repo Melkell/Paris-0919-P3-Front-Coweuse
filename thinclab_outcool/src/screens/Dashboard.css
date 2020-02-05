@@ -107,7 +107,9 @@
 
 .graph {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 95%;
   width: 95%;
   background-color: white;
