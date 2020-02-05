@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { render } from 'react-dom';
+
+import Donut from 'react-svg-donuts';
 
 import axios from 'axios'
 
@@ -8,6 +11,7 @@ import TypeItin from '../components/TypeItin'
 import Ressources from '../components/Ressources'
 
 import './Dashboard.css'
+import 'react-svg-donuts/dist/index.css';
 
 const DashboardAdmin = () => {
 	const [items, setItems] = useState([]);
@@ -15,6 +19,9 @@ const DashboardAdmin = () => {
 	const [filter, setFilter] = useState(false);
 	const [modalItineraire, setModalItineraire] = useState(false)
 	const [modalRessources, setModalRessources] = useState(false)
+	const [progress, setProgress] = useState(50);
+
+	const renderProgress = progress => <strong>{progress}%</strong>;
 
 	const admin = true;
 
@@ -59,7 +66,7 @@ const DashboardAdmin = () => {
 			<div className="Dashboard-List">
 				<div className="info-sup">
 					<div className="graph">
-						Graph
+						<Donut progress={progress} onRender={renderProgress} />
 					</div>
 				</div>
 				<h3>Liste missions</h3>

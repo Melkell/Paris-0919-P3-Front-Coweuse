@@ -106,6 +106,8 @@
 }
 
 .graph {
+  display: flex;
+  justify-content: center;
   height: 95%;
   width: 95%;
   background-color: white;
