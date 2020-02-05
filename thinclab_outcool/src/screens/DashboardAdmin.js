@@ -42,8 +42,8 @@ const DashboardAdmin = () => {
 
 	const getRatio = () => {
 		const tot = (items.length)
-		const validate = (items.filter((element => element.validation == 0)).map(element => element)).length
-		setProgress(100 - Math.round((validate/tot) * 100))
+		const notValidate = (items.filter((element => element.validation == 0)).map(element => element)).length
+		setProgress(100 - Math.round((notValidate/tot) * 100))
 	}
 
 	/*const getMission = (e) => {
