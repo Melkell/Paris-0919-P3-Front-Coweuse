@@ -4,13 +4,15 @@ import axios from 'axios'
 
 import Agenda from '../components/Agenda'
 import MissList from '../components/MissList'
-import Meteo from '../components/Meteo'
+import TypeItin from '../components/TypeItin'
 
 import './Dashboard.css'
 
 const DashboardAdmin = () => {
 	const [items, setItems] = useState([]);
 	const [itemIndex, setItemIndex] = useState(0);
+	const [filter, setFilter] = useState(false);
+	const [modalItineraire, setModalItineraire] = useState(false)
 
 	const admin = true;
 
@@ -18,6 +20,10 @@ const DashboardAdmin = () => {
 		axios.get(`http://localhost:4000/api/exploitation/missions`)
 			.then((result) => setItems(result.data))
 	})
+
+	const showItineraire = () => {
+		setModalItineraire(!modalItineraire);
+	}
 
 	/*const getMission = (e) => {
 		const selected = Number(e.target.id)
@@ -30,17 +36,8 @@ const DashboardAdmin = () => {
 			<div className="Left">
 				<div className="Action">
 					<div className="action-left">
-						<div className="first-line">
-							<div className="one"></div>
-							<div className="two"></div>
-						</div>
-						<div className="second-line">
-							<div className="square"></div>
-							<div className="square"></div>
-							<div className="square"></div>
-							<div className="square"></div>
-						</div>
-						<div></div>
+						<div className="one" onClick={showItineraire}>Ajout Mission</div>
+						<div className="two">Ressources</div>
 					</div>
 					<div className="action-right"></div>
 				</div>
@@ -49,18 +46,18 @@ const DashboardAdmin = () => {
 				</div>
 			</div>
 			<div className="Dashboard-List">
-				<div className="info-sup">info sup</div>
+				<div className="info-sup">
+					<div className="graph">
+						Graph
+					</div>
+				</div>
 				<h3>Liste missions</h3>
-				<label>
-					filter :
-				<input
-						name="checkbox"
-						type="checkbox"
-					/>
-				</label>
 				<MissList missions={items} admin={admin} />
 			</div>
-		</div>
+			{modalItineraire ? <div className="Dashboard-modal" clickOutside={showItineraire}>
+				<TypeItin />
+			</div> : ''}
+		</div >
 	)
 }
 
