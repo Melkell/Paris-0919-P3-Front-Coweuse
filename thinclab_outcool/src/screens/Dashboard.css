@@ -231,3 +231,22 @@ input:checked + .slider:before {
   transform: translate(-50%, -50%);
   box-shadow: 10px 10px 125px 85px rgba(0,0,0,0.75);
 }
+
+.ressources-modal {
+  border: solid 1px white;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75vh;
+  width: 75vw;
+  margin: auto;
+  background-color:#e8e8e8;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 125px 85px rgba(0,0,0,0.75);
+}
