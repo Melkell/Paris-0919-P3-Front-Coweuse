@@ -90,9 +90,6 @@ const DashboardAdmin = () => {
 				<span className="quit" onClick={showRessources}>X</span>
 				<Ressources quitModal={showRessources} />
 			</div> : ''}
-			{modalRessources ? <div className="ressources-modal" clickOutside={showRessources}>
-			 <Ressources />
-			</div> : ''}
 		</div >
 	)
 }
