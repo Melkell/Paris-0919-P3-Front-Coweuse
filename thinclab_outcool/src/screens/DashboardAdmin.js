@@ -18,7 +18,7 @@ const DashboardAdmin = () => {
 	const [filter, setFilter] = useState(false);
 	const [modalItineraire, setModalItineraire] = useState(false)
 	const [modalRessources, setModalRessources] = useState(false)
-	const [progress, setProgress] = useState(50);
+	const [progress, setProgress] = useState(10);
 
 	const renderProgress = progress => <strong>{progress}%</strong>;
 
@@ -28,7 +28,8 @@ const DashboardAdmin = () => {
 	useEffect(() => {
 		axios.get(`http://localhost:4000/api/exploitation/missions`)
 			.then((result) => setItems(result.data))
-	})
+			getRatio()
+	},)
 
 	const showItineraire = () => {
 		setModalItineraire(!modalItineraire);
@@ -37,6 +38,12 @@ const DashboardAdmin = () => {
 	const showRessources = () => {
 		console.log("hello")
 		setModalRessources(!modalRessources);
+	}
+
+	const getRatio = () => {
+		const tot = (items.length)
+		const notValidate = (items.filter((element => element.validation == 0)).map(element => element)).length
+		setProgress(100 - Math.round((notValidate/tot) * 100))
 	}
 
 	/*const getMission = (e) => {
@@ -68,7 +75,7 @@ const DashboardAdmin = () => {
 				<div className="info-sup">
 					<div className="graph">
 						<h3>Missions planifiées</h3>
-						<Donut progress={progress} onRender={renderProgress} />
+						<Donut progress={progress} onRender={renderProgress}/>
 					</div>
 				</div>
 				<h3>Liste missions</h3>
