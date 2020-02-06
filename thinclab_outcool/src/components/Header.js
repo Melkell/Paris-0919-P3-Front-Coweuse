@@ -24,21 +24,11 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-item nav-link" href="/dashboardAdmin">
-              Dashboard
-            </a>
-            <a className="nav-item nav-link" href="/itineraire">
-              Itinéraire
-            </a>
-            <a className="nav-item nav-link" href="/ressourcesAdmin">
-              Ressources
-            </a>
-            <a className="nav-item nav-link" href="/login">
-              Déconnexion
-            </a>
-            <a className="nav-item nav-link" href="/signup">
-              Première connexion
-            </a>
+
+            <a className="nav-item nav-link" href="/dashboardAdmin">dashboardAdmin</a>
+            <a className="nav-item nav-link" href="/dashboardCollab">dashboard</a>
+            <a className="nav-item nav-link" href="/login">Déconnexion</a>
+
           </div>
         </div>
       </nav>

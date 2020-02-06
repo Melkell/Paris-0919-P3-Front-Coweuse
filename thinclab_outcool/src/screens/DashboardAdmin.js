@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { render } from 'react-dom';
 
 import Donut from '../components/Donut';
@@ -9,6 +9,7 @@ import Agenda from '../components/Agenda'
 import MissList from '../components/MissList'
 import TypeItin from '../components/TypeItin'
 import Ressources from '../components/Ressources'
+import Meteo from '../components/Meteo'
 
 import './Dashboard.css'
 
@@ -18,25 +19,43 @@ const DashboardAdmin = () => {
 	const [filter, setFilter] = useState(false);
 	const [modalItineraire, setModalItineraire] = useState(false)
 	const [modalRessources, setModalRessources] = useState(false)
-	const [progress, setProgress] = useState(50);
+	const [progress, setProgress] = useState(10);
 
 	const renderProgress = progress => <strong>{progress}%</strong>;
 
 
 	const admin = true;
+	const didMountRef = useRef(true)
 
 	useEffect(() => {
+		if (didMountRef.current) {
+			axios.get(`http://localhost:4000/api/exploitation/missions`)
+				.then((result) => setItems(result.data))
+			getRatio()
+			didMountRef.current = false
+		} else {
+			didMountRef.current = true
+		}
+	})
+
+	const refresh = () => {
 		axios.get(`http://localhost:4000/api/exploitation/missions`)
 			.then((result) => setItems(result.data))
-	})
+		getRatio()
+	}
 
 	const showItineraire = () => {
 		setModalItineraire(!modalItineraire);
 	}
 
 	const showRessources = () => {
-		console.log("hello")
 		setModalRessources(!modalRessources);
+	}
+
+	const getRatio = () => {
+		const tot = (items.length)
+		const notValidate = (items.filter((element => element.validation == 0)).map(element => element)).length
+		setProgress(100 - Math.round((notValidate / tot) * 100))
 	}
 
 	/*const getMission = (e) => {
@@ -58,7 +77,9 @@ const DashboardAdmin = () => {
 							<p>Ressources</p>
 						</div>
 					</div>
-					<div className="action-right"></div>
+					<div className="action-right">
+						<Meteo />
+					</div>
 				</div>
 				<div className={admin ? "Dashboard-Schedule" : "Dashboard-Schedule-admin"}>
 					<Agenda missions={items} />
@@ -76,15 +97,12 @@ const DashboardAdmin = () => {
 			</div>
 			{modalItineraire ? <div className="Dashboard-modal">
 				<span className="quit" onClick={showItineraire}>X</span>
-				<TypeItin quitModal={showItineraire} />
+				<TypeItin quitModal={showItineraire} refresh={refresh} />
 			</div> : ''}
 
 			{modalRessources ? <div className="Dashboard-modal">
 				<span className="quit" onClick={showRessources}>X</span>
 				<Ressources quitModal={showRessources} />
-			</div> : ''}
-			{modalRessources ? <div className="ressources-modal" clickOutside={showRessources}>
-			 <Ressources />
 			</div> : ''}
 		</div >
 	)

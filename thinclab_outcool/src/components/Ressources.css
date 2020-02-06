@@ -1,116 +1,56 @@
-
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .ressources-global {
+  display: flex;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
 }
 
-h2 {
+.theme{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding: 5%;
   margin: 0;
+  padding: 15px;
   background-color: #00b74d;
   color: aliceblue;
+  font-size: 1.5em;
 }
 
 .ressources-collab {
-  grid-area: 1 / 1 / 2 / 2;
-  border-right: 1px solid aliceblue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-right: solid 1px aliceblue;
 }
 
 .ressources-outils {
-  grid-area: 1 / 2 / 2 / 3;
-  border-left: 1px solid aliceblue;
+  width: 100%;
+  border-left: solid 1px aliceblue;
 }
 
 .collab-filter-add,
 .outils-filter-add {
   width: 100%;
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 0 5% 0;
+  justify-content: space-around;
   background-color: aliceblue;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-}
-
-.button-add button {
-  background-color: #00b74d;
-  display: flex;
-  cursor: pointer;
-  color: #ffffff;
-  padding: 8px 18px;
-  margin-top: 35px;
-  margin-left: 40px;
-  text-decoration: none;
-  font: 14px Arial, Helvetica, sans-serif;
-  border-radius: 5px;
-}
-
-.button-add button:hover {
-  background-color: rgb(59, 197, 8);
-  border-radius: 5px;
+  align-self: flex-end;
 }
 
 .collab-global {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.filter select {
-  margin-top: 35px;
-}
-
-.filter span {
-  margin-right: 10px;
-}
-
-.tableRessources {
-  border-collapse: collapse;
-  width: 55%;
-  margin: 80px;
-  margin-left: 90px;
-}
-
-.tBody {
-  width: 75%;
-  text-align: left;
-  padding: 12px;
-}
-
-.tableElements:nth-child(even) {
-  background-color: rgb(212, 210, 210);
-  padding: 15px;
-}
-
-.tHead {
-  background-color: #00b74d;
-  color: white;
-}
-
-.thId,
-.thFirstname,
-.thLastname,
-.thRole,
-.thEmail,
-.thMission {
-  margin: 5px;
-  padding: 15px;
-}
-
-.thEmail {
-  padding-left: 65px;
-}
-
-.thMission {
-  padding-left: 55px;
+.outils-global{
+  display: flex;
+  flex-direction: column;
 }
 
 .vignette {
@@ -142,8 +82,4 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 10px 10px 125px 85px rgba(83, 83, 83, 0.75);
-}
-
-.add-modal p {
-  text-align: center;
 }
