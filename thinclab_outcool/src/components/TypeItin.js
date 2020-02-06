@@ -62,7 +62,6 @@ const TypeItin = (props) => {
 		// Pouf pouf requête POST blabla on a fini
 	}
 
-
 	// According to the production type (animal, plants), we display a list of main tasks
 	const changeRessourceType = () => {
 		switch (ressourceType) {
@@ -90,8 +89,8 @@ const TypeItin = (props) => {
 					<div>
 						<form>
 							<div className="button-container">
-								<input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Nombre de parcelle" onChange={handleParcellesNum} />
-								<input className="btn-itin" type="button" value="Envoyer" onClick={submitMiss} />
+								<input className="nb-parce" type="number" min="1" max="5" id="parcelles" name="parcelles" placeholder="Num" onChange={handleParcellesNum} />
+								<input className="btn-itin" type="button" step="any" value="Créer" onClick={submitMiss} />
 							</div>
 						</form>
 						<div className="miss-card-container">
@@ -131,7 +130,7 @@ const TypeItin = (props) => {
 			<div className="Intro">
 				<h1 className="TypeItin-Title"> Itinéraire </h1>
 				<select className="TypeItin-Select">
-					<option value={null}>Choisir une ressource</option>
+					<option value={null}>Choix ressource</option>
 					{prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
 				</select>
 			</div>

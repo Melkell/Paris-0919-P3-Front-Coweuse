@@ -6,19 +6,22 @@
 }
 
 .Intro {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .TypeItin-Select {
   width: 50%;
   height: 50px;
-	appearance: none;
-	border-radius: 3px;
-	font-size: 1.5em;
-	text-align-last:center;
+  border-radius: 3px;
+  font-size: 1.5em;
+  text-align-last: center;
+}
+
+.TypeItin-Select option {
+  max-width: 100%;
 }
 
 h1 {
@@ -42,65 +45,61 @@ h1 {
 .miss-card-céréale {
   width: 30%;
   padding: 5%;
-  border: 2px solid #00b74d;
+  border: 1px solid #00b74d;
   border-radius: 5px;
   text-align: center;
   margin: 1%;
   background-color: #f8f9fa;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .nb-parce {
-  display: block;
-  margin: auto;
-  margin-top: 1%;
-  width: 12%;
-  border: 1px solid;
-  border-color: #ccc;
-  border-radius: 5px;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
   color: black;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .btn-itin {
-  background-color: transparent;
-  border: 0px solid;
-  height: 20px;
-  width: 250px;
-  color: #ccc;
-  padding-top: 15px;
-  padding-bottom: 30px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  background: green;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 3px;
 }
 
-.btn-itin {
-  color: black;
-  transition: 0.3s all;
+.miss-card-container {
+  display: flex;
+  justify-content: center;
 }
 
-.btn-itin:before,
-.btn-itin:after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  transition: 0.3s all;
-}
-
-.btn-itin:before {
-  left: 0;
-  border-top: 2px solid green;
-}
-
-.btn-itin:after {
-  right: 0;
-  border-bottom: 2px solid green;
-}
-
-.btn-itin:hover {
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #00b74d;
-}
-
-.btn-itin:hover:after,
-.btn-itin:hover:before {
-  width: 100%;
+.miss-card-céréale {
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.4em;
 }
