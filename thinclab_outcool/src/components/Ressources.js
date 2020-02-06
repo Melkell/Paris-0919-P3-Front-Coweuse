@@ -1,11 +1,13 @@
 // Librairies
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import "./Header";
 
 // Styles
 import "./Ressources.css";
 import FormOutils from './FormOutils';
 import FormCollab from './FormCollab';
+import { mapItems } from "./helpers";
 
 const tab = [
   {
@@ -35,9 +37,16 @@ const tab = [
 ];
 
 const Ressources = () => {
+
   const [person, setPerson] = useState("");
   const [modalAddCollab, setModalAddCollab] = useState(false);
   const [modalAddTool, setModalAddTool] = useState(false);
+  const [tools, setTools] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:4000/api/dashboard/equipements`)
+      .then((result) => setTools(result.data))
+  }, [])
 
   const addCollab = () => {
     setModalAddCollab(!modalAddCollab);
@@ -60,9 +69,8 @@ const Ressources = () => {
         <div className="collab-global">
           <div className="collab-filter-add">
             <div className="filter">
-              <span>Trier par :</span>
               <select className="select-ressources">
-                <option value="">--Choisir une option--</option>
+                <option value="">Trier par</option>
                 <option value="noms">Noms</option>
                 <option value="roles">Rôles</option>
                 <option value="missions">Missions</option>
@@ -73,6 +81,7 @@ const Ressources = () => {
             </div>
           </div>
           <div>
+
           </div>
           {modalAddCollab ? (
             <div className="add-modal" clickOutside={addCollab}>
@@ -88,9 +97,8 @@ const Ressources = () => {
         <div className="outils-global">
           <div className="outils-filter-add">
             <div className="filter">
-              <span>Trier par :</span>
               <select className="select-ressources">
-                <option value="">--Choisir une option--</option>
+                <option value="">Trier par</option>
                 <option value="noms">Noms</option>
                 <option value="roles">Rôles</option>
                 <option value="missions">Missions</option>
@@ -99,6 +107,9 @@ const Ressources = () => {
             <div className="button-add">
               <button onClick={addTool}>Ajouter</button>
             </div>
+          </div>
+          <div>
+          {tools.map(tool => <div className="card-tool"><p>Numero : {tool.id}</p><p> Nom : {tool.name}</p></div>)}
           </div>
           {modalAddTool ? (
             <div className="add-modal" clickOutside={addTool}>
