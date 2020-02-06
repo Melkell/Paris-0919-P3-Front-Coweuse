@@ -128,12 +128,14 @@ const TypeItin = (props) => {
 
 	return (
 		<div className="TypeItin">
-			<h1 className="TypeItin-Title"> Itinéraire </h1>
-			<select className="TypeItin-Select">
-				<option value={null}>Choisir une ressource</option>
-				{prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
-			</select>
-			<div className="">
+			<div className="Intro">
+				<h1 className="TypeItin-Title"> Itinéraire </h1>
+				<select className="TypeItin-Select">
+					<option value={null}>Choisir une ressource</option>
+					{prodType !== null ? prodType.map(item => (<option key={item.toLowerCase()} value={item.toLowerCase()}>{item}</option>)) : 'Loading'}
+				</select>
+			</div>
+			<div>
 				{ressourceType !== null ? changeRessourceType() : ''}
 			</div>
 		</div>
